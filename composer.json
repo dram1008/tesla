@@ -30,7 +30,7 @@
                 "source": {
                     "url": "https://github.com/lipis/bootstrap-social",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "gh-pages"
                 }
             }
         },
@@ -42,7 +42,7 @@
                 "source": {
                     "url": "https://github.com/dram1008/library",
                     "type": "git",
-                    "reference": "gh-pages"
+                    "reference": "master"
                 }
             }
         }

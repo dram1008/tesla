@@ -8,6 +8,7 @@ $this->registerJs("$('.carousel').carousel()");
 <div class="site-index">
     <h1 class="page-header"><?= \yii\bootstrap\Html::encode($this->title) ?></h1>
 
+    <?php $this->registerJs("$('.carousel').carousel()"); ?>
     <div id="carousel-example-generic" class="carousel slide thumbnail" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -159,4 +160,5 @@ $this->registerJs("$('.carousel').carousel()");
         'title'       => 'Купить генератор Теслы',
         'description' => 'Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Время работы не ограничено. Не нужно ветра, солнца, воды и т.п.',
     ]) ?>
+
 </div>

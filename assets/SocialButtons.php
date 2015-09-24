@@ -13,19 +13,15 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class SocialButtons extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@vendor/lipis/bootstrap-social';
     public $css = [
-        'css/site.css',
+        'assets/css/font-awesome.css',
+            'bootstrap-social.css',
     ];
     public $js = [
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\web\JqueryAsset',
-        'yii\bootstrap\BootstrapThemeAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
     ];
 }
