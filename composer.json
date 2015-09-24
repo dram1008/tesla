@@ -18,9 +18,22 @@
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "dram1008/library": "*"
+        "dram1008/library": "*",
+        "lipis/bootstrap-social": "*"
     },
     "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "lipis/bootstrap-social",
+                "version": "1.0.1",
+                "source": {
+                    "url": "https://github.com/lipis/bootstrap-social",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
         {
             "type": "package",
             "package": {
@@ -29,7 +42,7 @@
                 "source": {
                     "url": "https://github.com/dram1008/library",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "gh-pages"
                 }
             }
         }

@@ -48,7 +48,7 @@ AppAsset::register($this);
                     'options' => ['class' => 'navbar-nav'],
                     'items'   => [
 //                        ['label' => 'О проекте', 'url' => ['site/about']],
-//                        ['label' => 'Продукция', 'url' => ['site/production']],
+                        ['label' => 'Продукция', 'url' => ['site/production']],
 //                        ['label' => 'Хозяинам домов', 'url' => ['site/house']],
 //                        ['label' => 'Промышленное использование', 'url' => ['site/prom']],
                         ['label' => 'Доставка', 'url' => ['site/dostavka']],
@@ -76,7 +76,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?> &middot; <a href="http://www.galaxysss.ru/">Галактический Союз Сил Света</a> &middot; <a href="http://www.laxsmi.ru/">Progressive Spirit</a></p>
 
     </div>
 </footer>
