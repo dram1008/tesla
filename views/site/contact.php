@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
     <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
+    <p><img src="/images/controller/site/contact/contact.jpg" width="100%" class="thumbnail"/> </p>
 
     <div class="jumbotron">
         <p>+7 (925) 237-45-01 Дмитрий Анатольевич</p>
