@@ -38,7 +38,7 @@ AppAsset::register($this);
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/" style="padding: 0px 0px 0px 0px;">
-                    <img src="/images/logo.png">
+                    <img src="/images/logo.png" height="50">
                 </a>
             </div>
 
@@ -53,6 +53,7 @@ AppAsset::register($this);
 //                        ['label' => 'Промышленное использование', 'url' => ['site/prom']],
                         ['label' => 'Доставка', 'url' => ['site/dostavka']],
                         ['label' => 'Сервис', 'url' => ['site/service']],
+                        ['label' => 'Аренда', 'url' => ['site/rent']],
                         ['label' => 'Диллерская программа', 'url' => ['site/diller']],
                         ['label' => 'Контакты', 'url' => ['site/contact']],
 //                        Yii::$app->user->isGuest ?
@@ -65,7 +66,12 @@ AppAsset::register($this);
                     ],
                 ]);
                 ?>
-                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="tel:+7-925-237-45-01">+7-925-237-45-01</a></li>
+                    <li><a href="tel:+7-926-518-98-75">+7-926-518-98-75</a></li>
+                </ul>
+
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -77,8 +83,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?> &middot; <a href="http://www.galaxysss.ru/">Галактический Союз Сил Света</a> &middot; <a href="http://www.laxsmi.ru/">Progressive Spirit</a></p>
-
+        <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?> &middot; <a href="http://www.galaxysss.ru/">Галактический Союз Сил Света</a> &middot; <a href="http://www.laxsmi.ru/">Progressive Spirit</a> &middot;  при поддержке Архангела Метатрона и INDRA FAMILY</p>
     </div>
 </footer>
 

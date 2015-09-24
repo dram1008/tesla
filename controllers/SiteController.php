@@ -108,6 +108,11 @@ class SiteController extends BaseController
         return $this->render([]);
     }
 
+    public function actionRent()
+    {
+        return $this->render([]);
+    }
+
     public function actionDostavka()
     {
         return $this->render([]);
