@@ -13,6 +13,10 @@ return [
     'modules' => [
         'gii' => 'yii\gii\Module',
     ],
+    'aliases'    => [
+        '@csRoot' =>  __DIR__ . '/../vendor/dram1008/library/lib',
+        '@web'    =>  __DIR__ . '/../public_html',
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
