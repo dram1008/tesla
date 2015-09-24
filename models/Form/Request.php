@@ -76,6 +76,8 @@ class Request extends BaseForm
                 return $fields;
             }
         ]);
+        Yii::warning(\yii\helpers\VarDumper::dumpAsString($request), 'tg\\request');
+        Yii::warning(\yii\helpers\VarDumper::dumpAsString(\Yii::$app->params['requestMailList']), 'tg\\request');
         if ($request === false) return false;
         foreach(\Yii::$app->params['requestMailList'] as $item) {
             Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
