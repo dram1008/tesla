@@ -168,7 +168,7 @@ $this->registerJs("$('.carousel').carousel()");
     <hr>
     <?= $this->render('../blocks/share', [
         'url'         => \yii\helpers\Url::current([], true),
-        'image'       => \yii\helpers\Url::to('/images/2.jpg', true),
+        'image'       => \yii\helpers\Url::to('/images/controller/site/index/2.jpg', true),
         'title'       => 'Купить генератор Теслы',
         'description' => 'Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Время работы не ограничено. Не нужно ветра, солнца, воды и т.п.',
     ]) ?>
