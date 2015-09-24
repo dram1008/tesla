@@ -37,7 +37,7 @@ $config = [
             'datetimeFormat'    => 'php:d.m.Y H:i',
             'decimalSeparator'  => '.',
             'thousandSeparator' => ' ',
-            'currencyCode'      => '',
+            'currencyCode'      => 'RUB',
             'locale'            => 'ru-RU',
             'nullDisplay'       => '',
         ],
