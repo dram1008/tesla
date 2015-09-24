@@ -82,6 +82,7 @@ class Request extends BaseForm
             $result = Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
                 'request' => $request,
             ]);
+            Yii::warning(\yii\helpers\VarDumper::dumpAsString(\Yii::$app->mailer), 'tg\\request');
             Yii::warning(\yii\helpers\VarDumper::dumpAsString($result), 'tg\\request');
         }
 
