@@ -13,6 +13,13 @@ $config = [
             'enableCookieValidation' => false,
             'enableCsrfValidation'   => false,
         ],
+        'urlManager'           => [
+            'enablePrettyUrl'     => true,
+            'showScriptName'      => false,
+            'enableStrictParsing' => true,
+            'suffix'              => '',
+            'rules'               => require(__DIR__ . '/urlRules.php'),
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

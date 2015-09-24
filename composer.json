@@ -17,8 +17,23 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "dram1008/library": "*"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "dram1008/library",
+                "version": "0.5.1",
+                "source": {
+                    "url": "https://github.com/dram1008/library",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
@@ -27,6 +42,11 @@
     },
     "config": {
         "process-timeout": 1800
+    },
+    "autoload": {
+        "psr-4": {
+            "cs\\": "vendor/dram1008/library/lib"
+        }
     },
     "scripts": {
         "post-create-project-cmd": [
