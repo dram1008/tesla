@@ -6,6 +6,9 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'aliases' => [
+        '@csRoot' => '@vendor/dram1008/library/lib',
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -27,16 +30,20 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+        'formatter'            => [
+            'dateFormat'        => 'dd.MM.yyyy',
+            'timeFormat'        => 'php:H:i:s',
+            'datetimeFormat'    => 'php:d.m.Y H:i',
+            'decimalSeparator'  => '.',
+            'thousandSeparator' => ' ',
+            'currencyCode'      => '',
+            'locale'            => 'ru-RU',
+            'nullDisplay'       => '',
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
+        'mailer'               => require(__DIR__ . '/mailerTransport.php'),
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

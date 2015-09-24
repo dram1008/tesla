@@ -15,10 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
 
     <div class="row">
-        <div class="col-lg-4">
-            <img src="/images/controller/site/diller/1442614623_86OdXQyvzA.jpg" class="thumbnail" width="100%"/>
+        <div class="col-lg-12">
+            <img src="/images/controller/site/diller/diller.jpg" class="thumbnail" width="100%"/>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-lg-offset-2">
             <p>У нас возможна диллерская программа.</p>
             <a href="/contact" class="btn btn-success btn-lg">Звоните</a>
         </div>
