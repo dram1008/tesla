@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p><span style="font-size: 400%;"><?= $item['kvt'] ?></span> кВт, <span class="label label-default">220 В</span>
                 </p>
                 <a href="<?= \yii\helpers\Url::to(['site/buy', 'id' => $item['id']]); ?>" class="btn btn-success"
-                   style="width: 100%"><?=\Yii::$app->formatter->asCurrency($item['price']) ?> руб.</a>
+                   style="width: 100%"><?=\Yii::$app->formatter->asCurrency((int)$item['price']) ?> руб.</a>
             </div>
         <?php } ?>
     </div>
