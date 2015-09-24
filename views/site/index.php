@@ -6,7 +6,7 @@ $this->title = 'Тесла Ген';
 $this->registerJs("$('.carousel').carousel()");
 ?>
 <div class="site-index">
-    <h1 class="page-header"><?= \yii\bootstrap\Html::encode($this->title) ?></h1>
+    <h1 class="page-header"><?= \yii\bootstrap\Html::encode($this->title) ?> <small>энергосистемы и источники питания здесь и сейчас</small></h1>
 
     <?php $this->registerJs("$('.carousel').carousel()"); ?>
     <div id="carousel-example-generic" class="carousel slide thumbnail" data-ride="carousel">
