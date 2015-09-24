@@ -74,9 +74,7 @@ $this->registerJs("$('.carousel').carousel()");
 
     <p>Услуги сервисного обслуживания</p>
 
-    <p>Изготовление 35-40 дней.</p>
-
-    <p>Цены</p>
+    <h2 class="page-header">Цены</h2>
 
 
     <table class="table table-hover table-striped" style="width: 100%; max-width: 500px;">
