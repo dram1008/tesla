@@ -2,52 +2,104 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Тесла Ген';
 ?>
 <div class="site-index">
+    <h1 class="page-header"><?= \yii\bootstrap\Html::encode($this->title) ?></h1>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+    <img src="/images/1.jpg" class="thumbnail" width="100%"/>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+    <p>Отгрузка происходит только после 50% предоплате. Доставка ТК Деловые линии или на Ваш выбор ТК. Изготовление
+        35-40 дней.
+    </p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+    <p>Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива.
+    </p>
 
-    <div class="body-content">
+    <p>Для выработки электроэнергии также нет необходимости во внешней энергии ветра, солнца, воды и т.п.
+    </p>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+    <p> Время работы не ограничено.
+    </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+    <p> Общий принцип работы самозапитки: работа ротовертера + умножитель энергии.
+    </p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+    <p> Аккумулятор служит только для запуска генератора. При отключении аккумулятора может работать. Время работы
+        неограниченно.
+    </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+    <p> Рабочий диапазон температуры окружающей среды, °С -35...+40
+    </p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+    <p> Уровень шума в момент регулирования, дБ <30
+    </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+    <p> Расчетный срок службы 10 лет
+    </p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
+    <p> Гарантия: 3 года
+    </p>
 
-    </div>
+    <p>Услуги сервисного обслуживания</p>
+    <p>Цены</p>
+
+
+    <table class="table table-hover table-striped" style="width: 300px">
+        <tr>
+            <th>кВт</th>
+            <th>тыс руб</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>270</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>470</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>10/380</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>20/380</td>
+            <td>900</td>
+        </tr>
+        <tr>
+            <td>50/380</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>100/380</td>
+            <td>4500</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <p>Заказ: </p>
+    <p>+7-925-237-45-01 Дмитрий Анатольевич</p>
+    <p>+7-926-518-98-75 Денис Валерьевич</p>
+
 </div>
