@@ -20,10 +20,10 @@ $this->registerJs("$('#share').popover()");
 ?>
 <?= ButtonDropdown::widget([
 //    'label'       => "<img src='{$appAssetUrl}/images/share.png' height='20' style='padding-right: 5px;'> Поделиться",
-    'label'       => "<span class='glyphicon glyphicon-share-alt'></span> Поделиться",
+    'label'            => "<span class='glyphicon glyphicon-share-alt'></span> Поделиться",
     'containerOptions' => ['class' => 'btn-group dropup'],
-    'encodeLabel' => false,
-    'dropdown'    => [
+    'encodeLabel'      => false,
+    'dropdown'         => [
         'options'      => ['class' => 'pull-top pull-center'],
         'encodeLabels' => false,
         'items'        => [

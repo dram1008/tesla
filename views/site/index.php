@@ -97,7 +97,7 @@ $this->title = 'Тесла Ген';
 
     <hr>
     <?= $this->render('../blocks/share', [
-        'url'         => \yii\helpers\Url::current(),
+        'url'         => \yii\helpers\Url::current([], true),
         'image'       => \yii\helpers\Url::to('/images/1.jpg', true),
         'title'       => 'Купить генератор Теслы',
         'description' => 'Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Время работы не ограничено. Не нужно ветра, солнца, воды и т.п.',
