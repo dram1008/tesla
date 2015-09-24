@@ -11,4 +11,5 @@ return [
     'house'      => 'site/house',
     'prom'       => 'site/prom',
     'diller'       => 'site/diller',
+    'service'       => 'site/service',
 ];

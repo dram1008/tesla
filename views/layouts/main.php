@@ -52,6 +52,7 @@ AppAsset::register($this);
 //                        ['label' => 'Хозяинам домов', 'url' => ['site/house']],
 //                        ['label' => 'Промышленное использование', 'url' => ['site/prom']],
                         ['label' => 'Доставка', 'url' => ['site/dostavka']],
+                        ['label' => 'Сервис', 'url' => ['site/service']],
                         ['label' => 'Диллерская программа', 'url' => ['site/diller']],
                         ['label' => 'Контакты', 'url' => ['site/contact']],
 //                        Yii::$app->user->isGuest ?
