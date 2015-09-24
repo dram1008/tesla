@@ -52,7 +52,7 @@ $this->registerJs("$('.carousel').carousel()");
         <div class="col-lg-4">
             <img src="/images/controller/site/index/4.jpg" class="img-circle center-block" width="140" height="140"/>
             <h2 class="center-block text-center">Тихий</h2>
-            <p class="center-block text-center">Уровень шума в момент регулирования<br>дБ < 30</p>
+            <p class="center-block text-center">Уровень шума в момент регулирования<br>дБ < 30<br>для сравнения Тихий шепот	- 35 дБ, Спокойный разговор - 70 дБ</p>
         </div>
         <div class="col-lg-4">
             <img src="/images/controller/site/index/5.jpg" class="img-circle center-block" width="140" height="140"/>
