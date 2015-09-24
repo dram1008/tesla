@@ -2,6 +2,8 @@
 
 return [
     '/'                               => 'site/index',
+    'log'                             => 'site/log',
+    'logDb'                           => 'site/log_db',
     'about'                           => 'site/about',
     'contact'                         => 'site/contact',
     'dostavka'                        => 'site/dostavka',
