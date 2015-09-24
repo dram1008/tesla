@@ -24,4 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <a href="/contact" class="btn btn-success btn-lg" style="width: 100%">Позвонить</a>
         </div>
     </div>
+
+    <hr>
+    <?= $this->render('../blocks/share', [
+        'url'         => \yii\helpers\Url::current([], true),
+        'image'       => \yii\helpers\Url::to('/images/controller/site/index/2.jpg', true),
+        'title'       => 'Купить генератор Теслы',
+        'description' => 'Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Время работы не ограничено. Не нужно ветра, солнца, воды и т.п.',
+    ]) ?>
 </div>

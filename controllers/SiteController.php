@@ -93,11 +93,6 @@ class SiteController extends BaseController
         ]);
     }
 
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
     public function actionProduction()
     {
         return $this->render([]);
