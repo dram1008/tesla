@@ -14,6 +14,7 @@ $this->registerJs("$('.carousel').carousel()");
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -26,6 +27,12 @@ $this->registerJs("$('.carousel').carousel()");
             </div>
             <div class="item">
                 <img src="/images/controller/site/index/1.jpg" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/controller/site/index/3.jpg" alt="...">
                 <div class="carousel-caption">
                     ...
                 </div>
@@ -45,17 +52,17 @@ $this->registerJs("$('.carousel').carousel()");
 
     <div class="row">
         <div class="col-lg-4">
-            <img src="/images/controller/site/index/3.jpg" class="img-circle center-block" width="140" height="140"/>
+            <img src="/images/controller/site/index/f3.jpg" class="img-circle center-block" width="140" height="140"/>
             <h2 class="center-block text-center">Нет топлива</h2>
             <p class="center-block text-center">Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Для выработки электроэнергии также нет необходимости во внешней энергии ветра, солнца, воды и т.п.</p>
         </div>
         <div class="col-lg-4">
-            <img src="/images/controller/site/index/4.jpg" class="img-circle center-block" width="140" height="140"/>
+            <img src="/images/controller/site/index/f4.jpg" class="img-circle center-block" width="140" height="140"/>
             <h2 class="center-block text-center">Тихий</h2>
             <p class="center-block text-center">Уровень шума в момент регулирования<br> не более 30 дБ<br>для сравнения Тихий шепот	- 35 дБ, Спокойный разговор - 70 дБ</p>
         </div>
         <div class="col-lg-4">
-            <img src="/images/controller/site/index/5.jpg" class="img-circle center-block" width="140" height="140"/>
+            <img src="/images/controller/site/index/f5.jpg" class="img-circle center-block" width="140" height="140"/>
             <h2 class="center-block text-center">Работает всегда</h2>
             <p class="center-block text-center">Время работы не ограничено. Расчетный срок службы от 10 лет</p>
         </div>
