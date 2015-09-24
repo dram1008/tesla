@@ -68,7 +68,6 @@ class Request extends BaseForm
      */
     public function insert($fields = null)
     {
-
         $request = parent::insert([
             'beforeInsert' => function($fields) {
                 $fields['datetime'] = time();
