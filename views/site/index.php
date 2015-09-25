@@ -66,7 +66,7 @@ $this->registerJs("$('.carousel').carousel()");
 
     <div class="row">
         <div class="col-lg-4">
-            <img src="/images/controller/site/index/f3.jpg" class="img-circle center-block" width="140" height="140"/>
+            <img src="/images/controller/site/index/cvetok-life2.png" class="img-circle center-block" width="140" height="140"/>
             <h2 class="center-block text-center">Нет топлива</h2>
             <p class="center-block text-center">Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Для выработки электроэнергии также нет необходимости во внешней энергии ветра, солнца, воды и т.п.</p>
         </div>
