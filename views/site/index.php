@@ -157,7 +157,7 @@ $this->registerJs("$('.carousel').carousel()");
     <h2 class="page-header">Принцип работы</h2>
     <div class="row">
         <div class="col-lg-4">
-            <img src="public_html/images/controller/site/index/p.jpg" width="100%" class="thumbnail"/>
+            <img src="/images/controller/site/index/p.jpg" width="100%" class="thumbnail"/>
         </div>
         <div class="col-lg-8">
             <p>Есть генератор.</p>
