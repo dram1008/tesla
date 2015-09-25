@@ -51,7 +51,7 @@ AppAsset::register($this);
                         ['label' => 'Продукция', 'url' => ['site/production']],
 //                        ['label' => 'Хозяинам домов', 'url' => ['site/house']],
 //                        ['label' => 'Промышленное использование', 'url' => ['site/prom']],
-                        ['label' => 'Аренда', 'url' => ['site/rent']],
+                        ['label' => 'Тест драйв', 'url' => ['site/rent']],
                         ['label' => 'Сервис', 'url' => ['site/service']],
                         ['label' => 'Доставка', 'url' => ['site/dostavka']],
                         ['label' => 'Диллерская программа', 'url' => ['site/diller']],
