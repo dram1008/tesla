@@ -10,6 +10,7 @@ return [
     'login'                           => 'site/login',
     'logout'                          => 'site/logout',
     'production'                      => 'site/production',
+    'production/<id:\\d+>'            => 'site/production_item',
     'house'                           => 'site/house',
     'prom'                            => 'site/prom',
     'diller'                          => 'site/diller',

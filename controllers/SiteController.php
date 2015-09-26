@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Form\Request;
 use app\models\Log;
+use app\models\Product;
 use cs\base\BaseController;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -96,6 +97,16 @@ class SiteController extends BaseController
     public function actionProduction()
     {
         return $this->render([]);
+    }
+
+    public function actionProduction_item()
+    {
+        $id = self::getParam('id');
+        $item = Product::find($id);
+
+        return $this->render([
+            'item' => $item,
+        ]);
     }
 
     public function actionMap()

@@ -11,6 +11,9 @@ use yii\captcha\Captcha;
 
 $this->title = 'Заказ генератора';
 $this->params['breadcrumbs'][] = $this->title;
+
+$item = \app\models\Product::find($id)->getFields();
+
 ?>
 <div class="site-contact">
     <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
@@ -25,6 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         <div class="row">
+            <div class="col-lg-4">
+                <h3><?= $item['name'] ?></h3>
+                <a href="<?= \yii\helpers\Url::to(['production_item', 'id' => $item['id']]) ?>">
+                    <img src="<?= $item['image'] ?>" width="100%" class="thumbnail"/>
+                </a>
+                <p><span style="font-size: 400%;"><?= $item['kvt'] ?></span> кВт, <span class="label label-default">220 В</span>
+                </p>
+            </div>
             <div class="col-lg-5">
                 <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
                 <input type="hidden" name="<?= $model->formName()?>[product_id]" value="<?= $id ?>">

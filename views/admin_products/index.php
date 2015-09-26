@@ -54,6 +54,21 @@ JS
                     'pageSize' => 20,
                 ],
             ]),
+            'columns'      => [
+                'id',
+                'name',
+                'v',
+                'kvt',
+                'price',
+                [
+                    'header' => 'Редактировать',
+                    'content' => function ($model, $key, $index, $column) {
+                        return Html::a('Редактировать', ['admin_products/edit', 'id' => $model['id']], [
+                            'class' => 'btn btn-primary'
+                        ]);
+                    }
+                ]
+            ]
         ]) ?>
     </div>
 

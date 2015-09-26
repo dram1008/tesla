@@ -35,6 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $model->field($form, 'v') ?>
                 <?= $model->field($form, 'kvt') ?>
                 <?= $model->field($form, 'price') ?>
+                <?= $model->field($form, 'content') ?>
+                <?= $model->field($form, 'image') ?>
 
                 <hr>
                 <div class="form-group">
