@@ -52,8 +52,6 @@ $this->registerJs("$('.btn-order').tooltip({title:'Заказать'})");
                    style="width: 100%"><?= \Yii::$app->formatter->asCurrency((int)$item['price']) ?></a>
             </div>
         <?php } ?>
-
-
     </div>
 
     <hr>

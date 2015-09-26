@@ -30,6 +30,7 @@ return [
             ],
         ],
         'db' => $db,
+        'db_gsss' =>  require(__DIR__ . '/db_gsss.php'),
     ],
     'params' => $params,
 ];
