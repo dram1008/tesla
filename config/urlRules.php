@@ -3,6 +3,7 @@
 return [
     '/'                               => 'site/index',
     'log'                             => 'site/log',
+    'map'                             => 'site/map',
     'logDb'                           => 'site/log_db',
     'contact'                         => 'site/contact',
     'dostavka'                        => 'site/dostavka',

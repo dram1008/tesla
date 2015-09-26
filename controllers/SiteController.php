@@ -98,6 +98,14 @@ class SiteController extends BaseController
         return $this->render([]);
     }
 
+    public function actionMap()
+    {
+        return $this->render([
+            'lat' => self::getParam('lat'),
+            'lng' => self::getParam('lng'),
+        ]);
+    }
+
     public function actionProm()
     {
         return $this->render([]);
