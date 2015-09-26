@@ -16,4 +16,4 @@ Email: <?= $request->getField('email') ?>
 Телефон: <?= $request->getField('phone') ?>
 Комментарий: <?= nl2br($request->getField('comment'))  ?>
 Доставка: <?= $request->getField('point_address') ?>
-<?= \yii\helpers\Url::to(['site/map', 'lat' => $request->getField('point_lat'), 'lng' => $request->getField('point_lng')])?>
+<?= \yii\helpers\Url::to(['site/map', 'lat' => $request->getField('point_lat'), 'lng' => $request->getField('point_lng')], true) ?>
