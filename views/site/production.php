@@ -44,7 +44,6 @@ $this->registerJs("$('.btn-order').tooltip({title:'Заказать'})");
                 <h3><?= $item['name'] ?></h3>
                 <a href="<?= \yii\helpers\Url::to(['production_item', 'id' => $item['id']]) ?>">
                     <img src="<?= $item['image'] ?>" width="100%" class="thumbnail"/>
-
                 </a>
 
                 <p><span style="font-size: 400%;"><?= $item['kvt'] ?></span> кВт, <span class="label label-default">380 В</span>
