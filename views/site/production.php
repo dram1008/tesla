@@ -24,9 +24,8 @@ $this->registerJs("$('.btn-order').tooltip({title:'Заказать'})");
             <div class="col-lg-4">
                 <h3><?= $item['name'] ?></h3>
                 <a href="<?= \yii\helpers\Url::to(['production_item', 'id' => $item['id']]) ?>">
-                    <img src="/images/controller/site/production/220.jpg" width="100%" class="thumbnail"/>
 
-                    <!--                    <img src="--><?//= $item['image'] ?><!--" width="100%" class="thumbnail"/>-->
+                                        <img src="<?= $item['image'] ?>" width="100%" class="thumbnail"/>
 </a>
                 <p><span style="font-size: 400%;"><?= $item['kvt'] ?></span> кВт, <span class="label label-default">220 В</span>
                 </p>
@@ -44,8 +43,8 @@ $this->registerJs("$('.btn-order').tooltip({title:'Заказать'})");
             <div class="col-lg-4">
                 <h3><?= $item['name'] ?></h3>
                 <a href="<?= \yii\helpers\Url::to(['production_item', 'id' => $item['id']]) ?>">
-                    <img src="/images/controller/site/production/220.jpg" width="100%" class="thumbnail"/>
-<!--                    <img src="/images/controller/site/production/380.jpg" width="100%" class="thumbnail"/>-->
+                    <img src="<?= $item['image'] ?>" width="100%" class="thumbnail"/>
+
                 </a>
 
                 <p><span style="font-size: 400%;"><?= $item['kvt'] ?></span> кВт, <span class="label label-default">380 В</span>
