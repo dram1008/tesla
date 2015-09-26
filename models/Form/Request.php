@@ -76,6 +76,7 @@ class Request extends BaseForm
             }
         ]);
         if ($request === false) return false;
+        $request = new \app\models\Request($request);
         foreach(\Yii::$app->params['requestMailList'] as $item) {
             $result = Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
                 'request' => $request,
