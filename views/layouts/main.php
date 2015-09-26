@@ -21,6 +21,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='yandex-verification' content='6721c497dd2fba14' />
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?> :: Генератор Теслы Купить, Арендовать, Бестоплиный генератор, Диллерская программа, Доставка в любую точку планеты, Сервисное обслуживание</title>
     <link rel="shortcut icon" href="/images/ico.png">
