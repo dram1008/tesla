@@ -68,9 +68,6 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                 ?>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="tel:+7-925-237-45-01">+7-925-237-45-01</a></li>
-                    <li><a href="tel:+7-926-518-98-75">+7-926-518-98-75</a></li>
-
                         <li class="dropdown">
                             <?php if (Yii::$app->user->isGuest) { ?>
                                 <a

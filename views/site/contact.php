@@ -24,9 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         Башня Эволюция</p>
 
     <div class="jumbotron">
-        <p>+7 (925) 237-45-01 Дмитрий Анатольевич</p>
-
-        <p>+7 (926) 518-98-75 Денис Валерьевич</p>
+        <p>god@galaxysss.ru</p>
     </div>
     <?=
 
