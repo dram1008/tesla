@@ -48,7 +48,7 @@ JS
 
     <?= \yii\grid\GridView::widget([
         'dataProvider' => new \yii\data\ActiveDataProvider([
-            'query'      => \app\models\Request::query(),
+            'query'      => \app\models\Request::query()->orderBy(['datetime' => SORT_DESC]),
             'pagination' => [
                 'pageSize' => 50,
             ],
