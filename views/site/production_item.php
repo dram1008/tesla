@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-8">
             <?= $item->getField('content') ?>
             <hr>
-            <h2>
+            <h2 class="center-block block-center" style="text-align: center;">
                 <?= \Yii::$app->formatter->asCurrency((int)$item->getField('price')) ?>
             </h2>
             <hr>
