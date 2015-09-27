@@ -25,8 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-8">
             <?= $item->getField('content') ?>
             <hr>
-            <a href="<?= \yii\helpers\Url::to(['site/buy', 'id' => $item->getId()]) ?>" class="btn btn-success" style="width: 100%">
+            <h2>
                 <?= \Yii::$app->formatter->asCurrency((int)$item->getField('price')) ?>
+            </h2>
+            <hr>
+            <a href="<?= \yii\helpers\Url::to(['site/buy', 'id' => $item->getId()]) ?>" class="btn btn-success btn-lg" style="width: 100%">
+                Заказать
             </a>
         </div>
     </div>
