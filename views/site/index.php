@@ -185,9 +185,7 @@ $this->registerJs("$('.carousel').carousel()");
 
     <div class="jumbotron">
         <h1>Заказ:</h1>
-        <p>+7 (925) 237-45-01 Дмитрий Анатольевич</p>
-
-        <p>+7 (926) 518-98-75 Денис Валерьевич</p>
+        <p>teslagen@galaxysss.ru</p>
         <p><a class="btn btn-primary btn-lg" href="/production" role="button">Выбрать модель</a></p>
     </div>
 
