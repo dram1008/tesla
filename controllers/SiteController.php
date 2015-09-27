@@ -2,17 +2,22 @@
 
 namespace app\controllers;
 
+use app\models\Form\NewPassword;
 use app\models\Form\Request;
 use app\models\Log;
 use app\models\Product;
+use app\models\User;
 use cs\base\BaseController;
+use cs\web\Exception;
 use Yii;
+use yii\bootstrap\ActiveForm;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\web\Response;
 
 class SiteController extends BaseController
 {
@@ -57,13 +62,45 @@ class SiteController extends BaseController
         return $this->render('index');
     }
 
+    public function actionActivate($code)
+    {
+        $row = \app\services\RegistrationDispatcher::query(['code' => $code])->one();
+        if ($row === false) {
+            throw new Exception('Нет такого кода или уже устарел');
+        }
+        $model = new NewPassword();
+        $user = User::find($row['parent_id']);
+        if ($model->load(Yii::$app->request->post()) && $model->update($user)) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            \Yii::$app->user->login($user);
+
+            return $this->refresh();
+        } else {
+            return $this->render([
+                'model' => $model,
+            ]);
+        }
+
+
+
+        return $this->render();
+    }
+
     public function actionLogin()
     {
+        $model = new LoginForm();
+
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            return ActiveForm::validate($model);
+        }
+
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
-        $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }

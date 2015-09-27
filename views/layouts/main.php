@@ -21,9 +21,10 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name='yandex-verification' content='6721c497dd2fba14' />
+    <meta name='yandex-verification' content='6721c497dd2fba14'/>
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?> :: Генератор Теслы Купить, Арендовать, Бестоплиный генератор, Диллерская программа, Доставка в любую точку планеты, Сервисное обслуживание</title>
+    <title><?= Html::encode($this->title) ?> :: Генератор Теслы Купить, Арендовать, Бестоплиный генератор, Диллерская
+        программа, Доставка в любую точку планеты, Сервисное обслуживание</title>
     <link rel="shortcut icon" href="/images/ico.png">
     <?php $this->head() ?>
 </head>
@@ -36,7 +37,8 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -61,13 +63,6 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                         ['label' => 'Доставка', 'url' => ['site/dostavka']],
                         ['label' => 'Диллерская программа', 'url' => ['site/diller']],
                         ['label' => 'Контакты', 'url' => ['site/contact']],
-//                        Yii::$app->user->isGuest ?
-//                            ['label' => 'Войти', 'url' => ['site/login']] :
-//                            [
-//                                'label'       => 'Выйти (' . Yii::$app->user->identity->username . ')',
-//                                'url'         => ['site/logout'],
-//                                'linkOptions' => ['data-method' => 'post']
-//                            ],
                     ],
                 ]);
                 ?>
@@ -75,10 +70,51 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="tel:+7-925-237-45-01">+7-925-237-45-01</a></li>
                     <li><a href="tel:+7-926-518-98-75">+7-926-518-98-75</a></li>
+
+                        <li class="dropdown">
+                            <?php if (Yii::$app->user->isGuest) { ?>
+                                <a
+                                    href="<?= \yii\helpers\Url::to(['site/login'])?>"
+                                    style="padding: 5px 10px 5px 10px;"
+                                    >
+                                <?= Html::img('/images/RM_Symbol_Blue.png', [
+                                    'height' => '40px',
+                                    'class'  => 'img-circle'
+                                ]) ?>
+                                    </a>
+                            <?php } else { ?>
+                            <a
+                                href="#"
+                                class="dropdown-toggle"
+                                data-toggle="dropdown"
+                                aria-expanded="false"
+                                role="button"
+                                style="padding: 5px 10px 5px 10px;"
+                                >
+                                <?= Html::img(Yii::$app->user->identity->getAvatar(), [
+                                    'height' => '40px',
+                                    'class'  => 'img-circle'
+                                ]) ?>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?= \yii\helpers\Url::to(['cabinet/requests']) ?>">Мои заказы</a></li>
+
+                                <li class="divider"></li>
+
+
+                                <li><a href="<?= \yii\helpers\Url::to(['site/logout']) ?>" data-method="post"><i
+                                            class="glyphicon glyphicon-off" style="padding-right: 5px;"></i>Выйти</a>
+                                </li>
+                            </ul>
+                            <?php } ?>
+                        </li>
                 </ul>
 
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
 
     <div class="container">
@@ -88,15 +124,24 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?> &middot; <a href="http://www.galaxysss.ru/">Галактический Союз Сил Света</a> &middot; <a href="http://www.laxsmi.ru/">Progressive Spirit</a> &middot;  при поддержке Архангела Метатрона и INDRA FAMILY</p>
+        <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?> &middot; <a href="http://www.galaxysss.ru/">Галактический
+                Союз Сил Света</a> &middot; <a href="http://www.laxsmi.ru/">Progressive Spirit</a> &middot; при
+            поддержке Архангела Метатрона и INDRA FAMILY</p>
     </div>
 </footer>
 
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-67744531-2', 'auto');
     ga('send', 'pageview');

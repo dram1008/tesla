@@ -1,8 +1,10 @@
 <?php
 
 return [
+    'cabinet/objects'                 => 'cabinet/requests',
     '/'                               => 'site/index',
     'log'                             => 'site/log',
+    'activate/<code:\\w+>'            => 'site/activate',
     'map'                             => 'site/map',
     'logDb'                           => 'site/log_db',
     'contact'                         => 'site/contact',
