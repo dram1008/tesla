@@ -23,4 +23,6 @@ return [
     'admin/products/add'              => 'admin_products/add',
     'admin/products/<id:\\d+>/edit'   => 'admin_products/edit',
     'admin/products/<id:\\d+>/delete' => 'admin_products/delete',
+    'admin/requests'                  => 'admin_requests/index',
+    'admin/requests/<id:\\d+>/view'   => 'admin_requests/view',
 ];
