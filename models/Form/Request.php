@@ -2,6 +2,7 @@
 
 namespace app\models\Form;
 
+use app\models\User;
 use cs\Application;
 use cs\base\BaseForm;
 use cs\services\VarDumper;
@@ -9,6 +10,7 @@ use cs\Widget\PlaceMap\PlaceMap;
 use Yii;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -69,16 +71,35 @@ class Request extends BaseForm
     public function insert($fields = null)
     {
         $request = parent::insert([
-            'beforeInsert' => function($fields) {
+            'beforeInsert' => function ($fields) {
                 $fields['datetime'] = time();
+                $fields['status'] = \app\models\Request::STATUS_1_WAIT;
 
                 return $fields;
             }
         ]);
         if ($request === false) return false;
+        $user = User::insert([
+            'email'              => $this->email,
+            'is_active'          => 1,
+            'is_confirm'         => 0,
+            'subscribe_is_tesla' => 1,
+        ]);
         $request = new \app\models\Request($request);
-        foreach(\Yii::$app->params['requestMailList'] as $item) {
-            $result = Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
+        $request->update(['user_id' => $user->getId()]);
+        $fields = \app\services\RegistrationDispatcher::add($user->getId());
+        // письмо им
+        \cs\Application::mail($this->email, 'Поздравляем вы сделали первый шаг к своему полю коллективного счастья', 'new_request_client', [
+            'url'      => Url::to([
+                'site/activate',
+                'code' => $fields['code']
+            ], true),
+            'user'     => $user,
+            'request' => $request,
+        ]);
+        foreach (\Yii::$app->params['requestMailList'] as $item) {
+            // письмо нам
+            Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
                 'request' => $request,
             ]);
         }
