@@ -3,6 +3,7 @@
 namespace app\models\Form;
 
 use app\models\User;
+use app\services\Subscribe;
 use cs\Application;
 use cs\base\BaseForm;
 use cs\services\VarDumper;
@@ -79,12 +80,16 @@ class Request extends BaseForm
             }
         ]);
         if ($request === false) return false;
-        $user = User::insert([
-            'email'              => $this->email,
+        $fields = [
+            'email'              => strtolower($this->email),
             'is_active'          => 1,
             'is_confirm'         => 0,
             'subscribe_is_tesla' => 1,
-        ]);
+        ];
+        foreach(Subscribe::$userFieldList as $field) {
+            $fields[$field] = 1;
+        }
+        $user = User::insert($fields);
         $request = new \app\models\Request($request);
         $request->update(['user_id' => $user->getId()]);
         $fields = \app\services\RegistrationDispatcher::add($user->getId());
