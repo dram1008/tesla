@@ -199,13 +199,22 @@ $this->registerJs("$('.carousel').carousel()");
         <p><a class="btn btn-primary btn-lg" href="/production" role="button">Выбрать модель</a></p>
     </div>
 
-    <hr>
 
 
-    <div class="row">
-        <div class="col-lg-4 col-lg-offset-4">
-            <?php
-            $this->registerJs(<<<JS
+    <?php
+    $isShowForm = false;
+    if (Yii::$app->user->isGuest) {
+        if (!isset(Yii::$app->request->cookies['subscribeIsStarted'])) {
+            $isShowForm = true;
+        }
+    }
+
+    if ($isShowForm) { ?>
+        <hr>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <?php
+                $this->registerJs(<<<JS
 // форма подписки
     {
         function setCookie (name, value, expires, path, domain, secure) {
@@ -255,31 +264,32 @@ $this->registerJs("$('.carousel').carousel()");
         });
     }
 JS
-);
-            ?>
+                );
+                ?>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Подписаться на рассылку</h3>
-                </div>
-                <div class="panel-body">
-                    <form id="formSubscribe">
-                        <?php if (Yii::$app->user->isGuest) {?>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Подписаться на рассылку</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form id="formSubscribe">
+                            <?php if (Yii::$app->user->isGuest) {?>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="formSubscribeName" placeholder="Имя">
+                                    <p class="help-block help-block-error hide">Это поле должно быть заполнено обязательно</p>
+                                </div>
+                            <?php }?>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="formSubscribeName" placeholder="Имя">
+                                <input type="email" class="form-control" id="formSubscribeEmail" placeholder="Email">
                                 <p class="help-block help-block-error hide">Это поле должно быть заполнено обязательно</p>
                             </div>
-                        <?php }?>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="formSubscribeEmail" placeholder="Email">
-                            <p class="help-block help-block-error hide">Это поле должно быть заполнено обязательно</p>
-                        </div>
-                        <button type="button" class="btn btn-default" style="width: 100%;" id="formSubscribeSubmit">Подписаться</button>
-                    </form>
+                            <button type="button" class="btn btn-default" style="width: 100%;" id="formSubscribeSubmit">Подписаться</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php } ?>
 
 
     <hr>
