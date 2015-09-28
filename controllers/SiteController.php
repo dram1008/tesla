@@ -72,6 +72,7 @@ class SiteController extends BaseController
         $user = User::find($row['parent_id']);
         if ($model->load(Yii::$app->request->post()) && $model->update($user)) {
             Yii::$app->session->setFlash('contactFormSubmitted');
+            \app\services\RegistrationDispatcher::delete($row['parent_id']);
 
             \Yii::$app->user->login($user);
 
@@ -81,8 +82,6 @@ class SiteController extends BaseController
                 'model' => $model,
             ]);
         }
-
-
 
         return $this->render();
     }

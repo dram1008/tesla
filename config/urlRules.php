@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'subscribe/mail'                  => 'subscribe/mail',
+    'subscribe/activate/<code:\\w+>'  => 'subscribe/activate',
     'cabinet/objects'                 => 'cabinet/requests',
     '/'                               => 'site/index',
     'log'                             => 'site/log',

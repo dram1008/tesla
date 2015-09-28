@@ -200,6 +200,89 @@ $this->registerJs("$('.carousel').carousel()");
     </div>
 
     <hr>
+
+
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <?php
+            $this->registerJs(<<<JS
+// форма подписки
+    {
+        function setCookie (name, value, expires, path, domain, secure) {
+            document.cookie = name + "=" + escape(value) +
+            ((expires) ? "; expires=" + expires : "") +
+            ((path) ? "; path=" + path : "") +
+            ((domain) ? "; domain=" + domain : "") +
+            ((secure) ? "; secure" : "");
+        }
+        $('#formSubscribeSubmit').click(function() {
+            var object;
+            object = $('#formSubscribeName');
+            if (object.length > 0) {
+                if (object.val() == '') {
+                    object.parent().addClass('has-error').find('.help-block-error').html('Это обязательное поле').show().removeClass('hide');
+                    object.focus();
+
+                    return;
+                }
+            }
+            object = $('#formSubscribeEmail');
+            if (object.val() == '') {
+                object.parent().addClass('has-error').find('.help-block-error').html('Это обязательное поле').show().removeClass('hide');
+                object.focus();
+
+                return;
+            }
+            ajaxJson({
+                url: '/subscribe/mail',
+                data: {
+                    email: $('#formSubscribeEmail').val(),
+                    name: $('#formSubscribeName').val()
+                },
+                success: function(ret) {
+                    $('#formSubscribe').remove();
+                    setCookie('subscribeIsStarted', 1);
+                    infoWindow('Вам на почту выслано подтверждение, пройдите пожалуйста на почту');
+                },
+                errorScript: function(ret) {
+                    object = $('#formSubscribeEmail');
+                    object.parent().addClass('has-error').find('.help-block-error').html(ret.data).show().removeClass('hide');
+                }
+            });
+        });
+        $('#formSubscribeName, #formSubscribeEmail').on('input', function() {
+            $(this).parent().removeClass('has-error').find('.help-block-error').hide();
+        });
+    }
+JS
+);
+            ?>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Подписаться на рассылку</h3>
+                </div>
+                <div class="panel-body">
+                    <form id="formSubscribe">
+                        <?php if (Yii::$app->user->isGuest) {?>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="formSubscribeName" placeholder="Имя">
+                                <p class="help-block help-block-error hide">Это поле должно быть заполнено обязательно</p>
+                            </div>
+                        <?php }?>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="formSubscribeEmail" placeholder="Email">
+                            <p class="help-block help-block-error hide">Это поле должно быть заполнено обязательно</p>
+                        </div>
+                        <button type="button" class="btn btn-default" style="width: 100%;" id="formSubscribeSubmit">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
     <?= $this->render('../blocks/share', [
         'url'         => \yii\helpers\Url::current([], true),
         'image'       => \yii\helpers\Url::to('/images/controller/site/index/2.jpg', true),

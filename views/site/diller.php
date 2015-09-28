@@ -19,8 +19,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <img src="/images/controller/site/diller/diller.jpg" class="thumbnail" width="100%"/>
         </div>
         <div class="col-lg-8 col-lg-offset-2">
-            <p>У нас возможна диллерская программа.</p>
-            <a href="/contact" class="btn btn-success btn-lg">Звоните</a>
+            <p>Мы рассматриваем ваши предложения на конкурсной основе.</p>
+            <p>Высылайте описание о роде вашей деятельности, необходимых объемах и ваше предложение.</p>
+            <p>Фото, дата и место рождения.</p>
+            <p>teslagen@galaxysss.ru</p>
         </div>
     </div>
 
