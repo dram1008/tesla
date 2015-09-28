@@ -114,7 +114,7 @@ class SubscribeController extends BaseController
             'is_active'                => 1,
             'is_confirm'               => 0,
             'name_first'               => $name,
-            'subscribe_is_tesla'               => 1,
+            'subscribe_is_tesla'       => 1,
         ];
         foreach(Subscribe::$userFieldList as $field) {
             $fields[$field] = 1;
