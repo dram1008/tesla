@@ -1,0 +1,14 @@
+#1 /home/g/galaxysss/tesla/views/layouts/main.php:32 cs\services\VarDumper::dump
+#2 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/View.php:325 require
+#3 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/View.php:247 yii\base\View->renderPhpFile
+#4 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/Controller.php:386 yii\base\View->renderFile
+#5 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/Controller.php:372 yii\base\Controller->renderContent
+#6 /home/g/galaxysss/tesla/vendor/dram1008/library/lib/base/BaseController.php:180 yii\base\Controller->render
+#7 /home/g/galaxysss/tesla/controllers/SiteController.php:62 cs\base\BaseController->render
+#8 : app\controllers\SiteController->actionIndex
+#9 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/InlineAction.php:55 call_user_func_array
+#10 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/Controller.php:151 yii\base\InlineAction->runWithParams
+#11 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/Module.php:455 yii\base\Controller->runAction
+#12 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/web/Application.php:84 yii\base\Module->runAction
+#13 /home/g/galaxysss/tesla/vendor/yiisoft/yii2/base/Application.php:375 yii\web\Application->handleRequest
+#14 /home/g/galaxysss/tesla/public_html/index.php:12 yii\base\Application->run
