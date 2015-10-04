@@ -128,6 +128,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 </footer>
 
 <?php $this->endBody() ?>
+<?= $this->render('../blocks/counters') ?>
 </body>
 </html>
 <?php $this->endPage() ?>
