@@ -29,7 +29,6 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
     <?php $this->head() ?>
 </head>
 <body>
-
 <?php $this->beginBody() ?>
 
 <div class="wrap">
@@ -127,7 +126,6 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
             поддержке Архангела Метатрона и INDRA FAMILY</p>
     </div>
 </footer>
-
 
 <?php $this->endBody() ?>
 </body>
