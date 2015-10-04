@@ -64,7 +64,28 @@ $config = [
             'targets'    => [
                 [
                     'class'  => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => [
+                        'error',
+                        'warning',
+                    ],
+                    'maxLogFiles' => 1,
+                ],
+                [
+                    'class'  => 'yii\log\DbTarget',
+                    'categories' => ['cap\\*'],
+                ],
+                [
+                    'class'      => 'yii\log\EmailTarget',
+                    'levels'     => [
+                        'error',
+                        'warning',
+                    ],
+                    'categories' => ['yii\db\*'],
+                    'message'    => [
+                        'from'    => ['admin@galaxysss.ru'],
+                        'to'      => ['god@galaxysss.ru'],
+                        'subject' => 'TESLA.GALAXYSSS.RU ERROR',
+                    ],
                 ],
             ],
         ],
