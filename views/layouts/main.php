@@ -26,7 +26,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
     <title><?= Html::encode($this->title) ?> :: Генератор Теслы Купить, Арендовать, Бестопливный генератор, Диллерская
         программа, Доставка в любую точку планеты, Сервисное обслуживание</title>
     <link rel="shortcut icon" href="/images/ico.png">
-<!--    --><?php //$this->head() ?>
+    <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
