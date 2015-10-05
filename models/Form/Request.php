@@ -120,15 +120,12 @@ class Request extends BaseForm
                 'name_first'         => $this->name,
                 'phone'              => $this->phone,
             ];
-            foreach (Subscribe::$userFieldList as $field) {
-                $fields[ $field ] = 1;
-            }
             $user = User::insert($fields);
             $fields = \app\services\RegistrationDispatcher::add($user->getId());
 
             $request = new \app\models\Request($request);
             $request->update([
-                'user_id'    => Yii::$app->user->getId(),
+                'user_id'    => $user->getId(),
                 'product_id' => $id,
             ]);
             // письмо им
