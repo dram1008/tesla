@@ -73,7 +73,7 @@ $config = [
                 ],
                 [
                     'class'      => 'yii\log\DbTarget',
-                    'categories' => ['cap\\*'],
+                    'categories' => ['tg\\*'],
                 ],
                 [
                     'class'      => 'yii\log\EmailTarget',
