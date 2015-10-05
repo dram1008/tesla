@@ -83,8 +83,9 @@ class Request extends BaseForm
      *
      * @return boolean whether the model passes validation
      */
-    public function insert($id)
+    public function insert($fieldsCols = null)
     {
+        $id = $fieldsCols;
         $request = parent::insert([
             'beforeInsert' => function ($fields) {
                 $fields['email'] = strtolower($fields['email']);
@@ -100,7 +101,10 @@ class Request extends BaseForm
         if (!Yii::$app->user->isGuest) {
             $user = Yii::$app->user->identity;
             $request = new \app\models\Request($request);
-            $request->update(['user_id' => Yii::$app->user->getId()]);
+            $request->update([
+                'user_id'    => Yii::$app->user->getId(),
+                'product_id' => $id,
+            ]);
             // письмо клиенту
             \cs\Application::mail($user->getEmail(), 'Вы сделали очередной заказ', 'next_request_client', [
                 'user'    => $user,
@@ -123,7 +127,10 @@ class Request extends BaseForm
             $fields = \app\services\RegistrationDispatcher::add($user->getId());
 
             $request = new \app\models\Request($request);
-            $request->update(['user_id' => $user->getId()]);
+            $request->update([
+                'user_id'    => Yii::$app->user->getId(),
+                'product_id' => $id,
+            ]);
             // письмо им
             \cs\Application::mail($this->email, 'Поздравляем вы сделали первый шаг к своему полю коллективного счастья', 'new_request_client', [
                 'url'     => Url::to([
