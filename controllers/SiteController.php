@@ -173,7 +173,7 @@ class SiteController extends BaseController
             return ActiveForm::validate($model);
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->insert()) {
+        if ($model->load(Yii::$app->request->post()) && $model->insert($id)) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();

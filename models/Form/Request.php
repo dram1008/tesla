@@ -83,7 +83,7 @@ class Request extends BaseForm
      *
      * @return boolean whether the model passes validation
      */
-    public function insert($fields = null)
+    public function insert($id)
     {
         $request = parent::insert([
             'beforeInsert' => function ($fields) {
@@ -95,6 +95,7 @@ class Request extends BaseForm
             }
         ]);
         if ($request === false) return false;
+        $request['product_id'] = $id;
         $this->email = strtolower($this->email);
         if (!Yii::$app->user->isGuest) {
             $user = Yii::$app->user->identity;
