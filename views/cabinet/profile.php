@@ -32,7 +32,6 @@ $this->title = 'Редактирование профиля';
             ]); ?>
             <?= $form->field($model, 'name_first')->label('Имя') ?>
             <?= $form->field($model, 'name_last')->label('Фамилия') ?>
-            <?= $form->field($model, 'avatar')->label('Картинка')->widget('cs\Widget\FileUpload2\FileUpload') ?>
 
 
             <hr class="featurette-divider">
