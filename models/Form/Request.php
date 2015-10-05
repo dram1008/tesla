@@ -102,7 +102,7 @@ class Request extends BaseForm
             $request = new \app\models\Request($request);
             $request->update(['user_id' => Yii::$app->user->getId()]);
             // письмо клиенту
-            \cs\Application::mail($this->email, 'Вы сделали очередной заказ', 'next_request_client', [
+            \cs\Application::mail($user->getEmail(), 'Вы сделали очередной заказ', 'next_request_client', [
                 'user'    => $user,
                 'request' => $request,
             ]);
