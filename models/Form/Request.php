@@ -73,6 +73,7 @@ class Request extends BaseForm
     {
         $request = parent::insert([
             'beforeInsert' => function ($fields) {
+                $fields['email'] = strtolower($fields['email']);
                 $fields['datetime'] = time();
                 $fields['status'] = \app\models\Request::STATUS_1_WAIT;
 
@@ -80,26 +81,32 @@ class Request extends BaseForm
             }
         ]);
         if ($request === false) return false;
-        $fields = [
-            'email'              => strtolower($this->email),
-            'is_active'          => 1,
-            'is_confirm'         => 0,
-            'subscribe_is_tesla' => 1,
-        ];
-        foreach(Subscribe::$userFieldList as $field) {
-            $fields[$field] = 1;
+        $this->email = strtolower($this->email);
+        $user = User::find(['email' => $this->email]);
+        if (is_null($user)) {
+            $fields = [
+                'email'              => $this->email,
+                'datetime_reg'       => gmdate('YmdHis'),
+                'is_active'          => 1,
+                'is_confirm'         => 0,
+                'subscribe_is_tesla' => 1,
+            ];
+            foreach (Subscribe::$userFieldList as $field) {
+                $fields[ $field ] = 1;
+            }
+            $user = User::insert($fields);
+            $fields = \app\services\RegistrationDispatcher::add($user->getId());
         }
-        $user = User::insert($fields);
+
         $request = new \app\models\Request($request);
         $request->update(['user_id' => $user->getId()]);
-        $fields = \app\services\RegistrationDispatcher::add($user->getId());
         // письмо им
         \cs\Application::mail($this->email, 'Поздравляем вы сделали первый шаг к своему полю коллективного счастья', 'new_request_client', [
-            'url'      => Url::to([
+            'url'     => Url::to([
                 'site/activate',
                 'code' => $fields['code']
             ], true),
-            'user'     => $user,
+            'user'    => $user,
             'request' => $request,
         ]);
         foreach (\Yii::$app->params['requestMailList'] as $item) {

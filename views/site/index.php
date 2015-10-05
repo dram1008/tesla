@@ -114,61 +114,18 @@ $this->registerJs("$('.carousel').carousel()");
             <th>Напряжение, В</th>
             <th>Цена, тыс. руб</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>220</td>
-            <td>70</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>220</td>
-            <td>100</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>220</td>
-            <td>120</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>220</td>
-            <td>140</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>220</td>
-            <td>270</td>
-        </tr>
-        <tr>
-            <td>25</td>
-            <td>220</td>
-            <td>470</td>
-        </tr>
-        <tr>
-            <td>50</td>
-            <td>220</td>
-            <td>500</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>380</td>
-            <td>450</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>380</td>
-            <td>900</td>
-        </tr>
-        <tr>
-            <td>50</td>
-            <td>380</td>
-            <td>1 500</td>
-        </tr>
-        <tr>
-            <td>100</td>
-            <td>380</td>
-            <td>4 500</td>
-        </tr>
+        <?php foreach (\app\models\Product::query()->orderBy([
+            'v'   => SORT_ASC,
+            'kvt' => SORT_ASC,
+        ])->all() as $item) {
+            ?>
+            <tr>
+                <td><?= $item['kvt'] ?></td>
+                <td><?= $item['v'] ?></td>
+                <td><?= Yii::$app->formatter->asDecimal($item['price']/1000, 0) ?></td>
+            </tr>
+        <?php }?>
+
     </table>
 
     <h2 class="page-header">Принцип работы</h2>

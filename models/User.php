@@ -130,7 +130,7 @@ class User extends \cs\base\DbRecord implements \yii\web\IdentityInterface
         \Yii::info('REQUEST: ' . \yii\helpers\VarDumper::dumpAsString($_REQUEST), 'gs\\user_registration');
         \Yii::info('Поля для регистрации: ' . \yii\helpers\VarDumper::dumpAsString($fields), 'gs\\user_registration');
         $user = self::insert($fields);
-        $fields = \app\service\RegistrationDispatcher::add($user->getId());
+        $fields = \app\services\RegistrationDispatcher::add($user->getId());
         \cs\Application::mail($email, 'Подтверждение регистрации', 'registration', [
             'url'      => Url::to([
                 'auth/registration_activate',

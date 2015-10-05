@@ -30,11 +30,11 @@ class SubscribeController extends BaseController
     {
         self::validateRequestJson([
             ['required',
-             [
-                 'mail',
-                 'type',
-                 'hash'
-             ]
+                [
+                    'mail',
+                    'type',
+                    'hash'
+                ]
             ],
             [
                 'integer',
@@ -99,36 +99,37 @@ class SubscribeController extends BaseController
     {
         $email = self::getParam('email');
         $name = self::getParam('name');
-        $email = strtolower($email);
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return self::jsonErrorId(101, 'Не корректный формат адреса');
         }
-        if (User::query(['email' => $email, 'subscribe_is_tesla' => 1])->exists()) {
-            return self::jsonErrorId(101, 'Такая почта уже зарегистрирована');
+        $email = strtolower($email);
+        $user = User::find(['email' => $email, 'subscribe_is_tesla' => 1]);
+        if ($user) {
+            $user->update(['subscribe_is_tesla' => 1]);
+        } else {
+            $fields = [
+                'email'              => $email,
+                'datetime_reg'       => gmdate('YmdHis'),
+                'is_active'          => 1,
+                'is_confirm'         => 0,
+                'name_first'         => $name,
+                'subscribe_is_tesla' => 1,
+            ];
+            foreach (Subscribe::$userFieldList as $field) {
+                $fields[ $field ] = 1;
+            }
+            $user = User::insert($fields);
+            $fields = RegistrationDispatcher::add($user->getId());
+            \cs\Application::mail($email, 'Подтверждение почты', 'subscribe_activate', [
+                'url'      => Url::to([
+                    'subscribe/activate',
+                    'code' => $fields['code']
+                ], true),
+                'user'     => $user,
+                'datetime' => \Yii::$app->formatter->asDatetime($fields['date_finish'])
+            ]);
         }
-
-        $fields = [
-            'email'                    => $email,
-            'datetime_reg'             => gmdate('YmdHis'),
-            'is_active'                => 1,
-            'is_confirm'               => 0,
-            'name_first'               => $name,
-            'subscribe_is_tesla'       => 1,
-        ];
-        foreach(Subscribe::$userFieldList as $field) {
-            $fields[$field] = 1;
-        }
-        $user = User::insert($fields);
-        $fields = RegistrationDispatcher::add($user->getId());
-        \cs\Application::mail($email, 'Подтверждение почты', 'subscribe_activate', [
-            'url'      => Url::to([
-                'subscribe/activate',
-                'code' => $fields['code']
-            ], true),
-            'user'     => $user,
-            'datetime' => \Yii::$app->formatter->asDatetime($fields['date_finish'])
-        ]);
 
         return self::jsonSuccess();
     }
