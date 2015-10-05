@@ -13,7 +13,7 @@ $this->title = 'Мои заказы';
 <div class="site-contact">
     <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 row">
         <?php
         $c = 1;
         foreach ($items as $item) {

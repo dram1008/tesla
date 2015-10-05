@@ -3,7 +3,10 @@
 return [
     'subscribe/mail'                  => 'subscribe/mail',
     'subscribe/activate/<code:\\w+>'  => 'subscribe/activate',
+
     'cabinet/objects'                 => 'cabinet/requests',
+    'cabinet/profile'                 => 'cabinet/profile',
+
     '/'                               => 'site/index',
     'log'                             => 'site/log',
     'activate/<code:\\w+>'            => 'site/activate',

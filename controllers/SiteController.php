@@ -166,6 +166,13 @@ class SiteController extends BaseController
     public function actionBuy($id)
     {
         $model = new Request();
+
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            return ActiveForm::validate($model);
+        }
+
         if ($model->load(Yii::$app->request->post()) && $model->insert()) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 

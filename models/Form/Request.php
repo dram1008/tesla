@@ -28,20 +28,34 @@ class Request extends BaseForm
     public $comment;
     public $product_id;
 
+    public function rules()
+    {
+        return ArrayHelper::merge([
+            [['email'], 'validateEmail']
+        ], $this->rulesAdd());
+    }
+
+    public function validateEmail($attribute, $params)
+    {
+        if (User::query(['email' => strtolower($this->email)])->exists()) {
+            $this->addError($attribute, 'Такой пользователь уже существует, вам нужно войти сначала');
+        }
+    }
 
     /**
+     *
      */
     public function __construct()
     {
         self::$fields = [
             [
-                'product_id', 'Имя', 1
+                'product_id', 'Имя', 0
             ],
             [
-                'name', 'Имя', 1
+                'name', 'Имя', 0
             ],
             [
-                'email', 'Почта', 1, 'email'
+                'email', 'Почта', 0, 'email'
             ],
             [
                 'phone', 'Телефон', 0, 'default'
@@ -82,37 +96,49 @@ class Request extends BaseForm
         ]);
         if ($request === false) return false;
         $this->email = strtolower($this->email);
-        $user = User::find(['email' => $this->email]);
-        if (is_null($user)) {
+        if (!Yii::$app->user->isGuest) {
+            $user = Yii::$app->user->identity;
+            $request = new \app\models\Request($request);
+            $request->update(['user_id' => Yii::$app->user->getId()]);
+            // письмо клиенту
+            \cs\Application::mail($this->email, 'Вы сделали очередной заказ', 'next_request_client', [
+                'user'    => $user,
+                'request' => $request,
+            ]);
+        } else {
             $fields = [
                 'email'              => $this->email,
                 'datetime_reg'       => gmdate('YmdHis'),
                 'is_active'          => 1,
                 'is_confirm'         => 0,
                 'subscribe_is_tesla' => 1,
+                'name_first'         => $this->name,
+                'phone'              => $this->phone,
             ];
             foreach (Subscribe::$userFieldList as $field) {
                 $fields[ $field ] = 1;
             }
             $user = User::insert($fields);
             $fields = \app\services\RegistrationDispatcher::add($user->getId());
+
+            $request = new \app\models\Request($request);
+            $request->update(['user_id' => $user->getId()]);
+            // письмо им
+            \cs\Application::mail($this->email, 'Поздравляем вы сделали первый шаг к своему полю коллективного счастья', 'new_request_client', [
+                'url'     => Url::to([
+                    'site/activate',
+                    'code' => $fields['code']
+                ], true),
+                'user'    => $user,
+                'request' => $request,
+            ]);
         }
 
-        $request = new \app\models\Request($request);
-        $request->update(['user_id' => $user->getId()]);
-        // письмо им
-        \cs\Application::mail($this->email, 'Поздравляем вы сделали первый шаг к своему полю коллективного счастья', 'new_request_client', [
-            'url'     => Url::to([
-                'site/activate',
-                'code' => $fields['code']
-            ], true),
-            'user'    => $user,
-            'request' => $request,
-        ]);
         foreach (\Yii::$app->params['requestMailList'] as $item) {
             // письмо нам
             Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
                 'request' => $request,
+                'user'    => $user,
             ]);
         }
 

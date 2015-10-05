@@ -96,9 +96,9 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="<?= \yii\helpers\Url::to(['cabinet/requests']) ?>">Мои заказы</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['cabinet/profile']) ?>">Мой профиль</a></li>
 
                                 <li class="divider"></li>
-
 
                                 <li><a href="<?= \yii\helpers\Url::to(['site/logout']) ?>" data-method="post"><i
                                             class="glyphicon glyphicon-off" style="padding-right: 5px;"></i>Выйти</a>

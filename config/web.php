@@ -6,9 +6,10 @@ $config = [
     'id'         => 'basic',
     'basePath'   => dirname(__DIR__),
     'bootstrap'  => ['log'],
+    'language'   => 'ru',
     'aliases'    => [
-        '@csRoot' =>  __DIR__ . '/../vendor/dram1008/library/lib',
-        '@web'    =>  __DIR__ . '/../public_html',
+        '@csRoot' => __DIR__ . '/../vendor/dram1008/library/lib',
+        '@web'    => __DIR__ . '/../public_html',
     ],
     'components' => [
         'request'      => [
@@ -41,7 +42,7 @@ $config = [
             'locale'            => 'ru-RU',
             'nullDisplay'       => '',
         ],
-        'view'                 => [
+        'view'         => [
             'renderers' => [
                 'tpl' => [
                     'class'     => 'yii\smarty\ViewRenderer',
@@ -63,15 +64,15 @@ $config = [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets'    => [
                 [
-                    'class'  => 'yii\log\FileTarget',
-                    'levels' => [
+                    'class'       => 'yii\log\FileTarget',
+                    'levels'      => [
                         'error',
                         'warning',
                     ],
                     'maxLogFiles' => 1,
                 ],
                 [
-                    'class'  => 'yii\log\DbTarget',
+                    'class'      => 'yii\log\DbTarget',
                     'categories' => ['cap\\*'],
                 ],
                 [

@@ -37,13 +37,19 @@ $item = \app\models\Product::find($id)->getFields();
                 </p>
             </div>
             <div class="col-lg-5">
-                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+                <?php $form = ActiveForm::begin([
+                    'id'                   => 'contact-form',
+                    'enableAjaxValidation' => true,
+                ]); ?>
                 <input type="hidden" name="<?= $model->formName()?>[product_id]" value="<?= $id ?>">
-                <?= $model->field($form, 'name') ?>
-                <?= $model->field($form, 'email') ?>
-                <?= $model->field($form, 'phone')->widget(\yii\widgets\MaskedInput::className(), [
-                    'mask' => '+7 (999) 999-99-99'
-                ]) ?>
+                <?php if (Yii::$app->user->isGuest) { ?>
+                    <?= $model->field($form, 'name') ?>
+                    <?= $model->field($form, 'email') ?>
+                    <?= $model->field($form, 'phone') ?>
+                <?php } else { ?>
+                    <p class="label label-success" style="margin-bottom: 40px">Вы уже авторизованы</p>
+                    <hr>
+                <?php } ?>
                 <?= $model->field($form, 'point') ?>
                 <?= $model->field($form, 'comment')->textarea(['rows' => 20]) ?>
 

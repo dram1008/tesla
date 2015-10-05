@@ -42,4 +42,19 @@ class CabinetController extends BaseController
         ]);
     }
 
+    public function actionProfile()
+    {
+        $model = \app\models\Form\Profile::find(Yii::$app->user->getId());
+        if ($model->load(Yii::$app->request->post()) && ($fields = $model->update())) {
+            Yii::$app->user->identity->cacheClear();
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        } else {
+            return $this->render([
+                'model' => $model,
+            ]);
+        }
+    }
+
 }
