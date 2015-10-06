@@ -81,9 +81,10 @@ class SubscribeHistory extends \cs\base\BaseForm
         return $item;
     }
 
-    public function update($fieldsCols = null)
+    public function update2($id)
     {
-        $item = parent::update($fieldsCols);
+        $item = parent::update();
+        $item['id'] = $id;
         $class = new \app\models\SubscribeHistory($item);
         // получаю content
         {

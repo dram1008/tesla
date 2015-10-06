@@ -33,7 +33,7 @@ class Admin_subscribeController extends AdminBaseController
     public function actionEdit($id)
     {
         $model = \app\models\Form\SubscribeHistory::find($id);
-        if ($model->load(Yii::$app->request->post()) && $model->update()) {
+        if ($model->load(Yii::$app->request->post()) && $model->update2($id)) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();
