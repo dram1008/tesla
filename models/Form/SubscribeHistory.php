@@ -83,13 +83,7 @@ class SubscribeHistory extends \cs\base\BaseForm
 
     public function update($fieldsCols = null)
     {
-        $item = parent::insert([
-            'beforeInsert' => function ($fields) {
-                $fields['date_insert'] = time();
-
-                return $fields;
-            },
-        ]);
+        $item = parent::update($fieldsCols);
         $class = new \app\models\SubscribeHistory($item);
         // получаю content
         {
