@@ -7,7 +7,7 @@ use app\models\Request;
 use cs\base\BaseController;
 use Yii;
 
-class Admin_requestsController extends BaseController
+class Admin_requestsController extends AdminBaseController
 {
     public function actionIndex()
     {

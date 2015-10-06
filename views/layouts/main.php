@@ -98,6 +98,11 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                                 <li><a href="<?= \yii\helpers\Url::to(['cabinet/requests']) ?>">Мои заказы</a></li>
                                 <li><a href="<?= \yii\helpers\Url::to(['cabinet/profile']) ?>">Мой профиль</a></li>
 
+                                <?php if (Yii::$app->user->identity->isAdmin()) { ?>
+                                    <li class="divider"></li>
+                                    <li><a href="<?= \yii\helpers\Url::to(['admin_subscribe/index']) ?>">Рассылки</a></li>
+                                <?php } ?>
+
                                 <li class="divider"></li>
 
                                 <li><a href="<?= \yii\helpers\Url::to(['site/logout']) ?>" data-method="post"><i
@@ -118,6 +123,25 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
         <?= $content ?>
     </div>
 </div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="modalInfo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Информация</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <footer class="footer">
     <div class="container">

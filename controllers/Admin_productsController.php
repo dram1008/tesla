@@ -6,7 +6,7 @@ use app\models\Product;
 use cs\base\BaseController;
 use Yii;
 
-class Admin_productsController extends BaseController
+class Admin_productsController extends AdminBaseController
 {
     public function actionIndex()
     {

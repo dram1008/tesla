@@ -199,6 +199,37 @@ class AuthController extends BaseController
         }
     }
 
+    public function actionRegistration_referal($code)
+    {
+        $model = new \app\models\Form\Registration();
+        $model->setScenario('insert');
+
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            $model->setScenario('ajax');
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            return ActiveForm::validate($model);
+        }
+
+        if ($model->load(Yii::$app->request->post()) && ($user = $model->register())) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+            Yii::$app->session->setFlash('user_id', $user->getId());
+            \app\models\Registration::insert([
+                'referal_code' => $code,
+                'user_id'      => $user->getId(),
+            ]);
+            $user->activate();
+            Yii::$app->user->login($user);
+
+            return $this->refresh();
+        }
+        else {
+            return $this->render([
+                'model' => $model,
+            ]);
+        }
+    }
+
     /**
      * Активация регистрации
      *

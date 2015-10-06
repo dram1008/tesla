@@ -29,3 +29,12 @@ function ajaxJson(options) {
         }
     });
 }
+
+
+function showInfo(message, functionClose) {
+    if (typeof functionClose != 'undefined') {
+        $('#modalInfo .btn-default').on('click', functionClose);
+    }
+    $('#modalInfo .modal-body').html(message);
+    $('#modalInfo').modal('show');
+}

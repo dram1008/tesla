@@ -9,8 +9,19 @@ return [
 
     'password/recover'                      => 'auth/password_recover',
     'password/recover/activate/<code:\\w+>' => 'auth/password_recover_activate',
+    'registration/<code:\\w+>'              => 'auth/registration_referal',
 
     'captcha'                               => 'site/captcha',
+
+    'upload/HtmlContent2'                   => 'html_content/upload',
+
+    'admin/subscribe'                       => 'admin_subscribe/index',
+    'admin/subscribe/add'                   => 'admin_subscribe/add',
+    'admin/subscribe/send'                  => 'admin_subscribe/send',
+    'admin/subscribe/delete'                => 'admin_subscribe/delete',
+    'admin/subscribe/add/simple'            => 'admin_subscribe/add_simple',
+    'admin/subscribe/<id:\\d+>'             => 'admin_subscribe/view',
+    'admin/subscribe/<id:\\d+>/edit'        => 'admin_subscribe/edit',
 
     '/'                                     => 'site/index',
     'log'                                   => 'site/log',
@@ -34,6 +45,5 @@ return [
     'admin/products/<id:\\d+>/edit'         => 'admin_products/edit',
     'admin/products/<id:\\d+>/delete'       => 'admin_products/delete',
     'admin/requests'                        => 'admin_requests/index',
-    'admin/requests/<id:\\d+>/view'         => 'admin_requests/view',
     'admin/requests/<id:\\d+>/view'         => 'admin_requests/view',
 ];
