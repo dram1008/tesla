@@ -9,8 +9,7 @@ class m151005_204251_dd extends Migration
     {
         $rows = \app\models\User::query(['subscribe_is_tesla' => 1])->select('id,email')->all();
         foreach($rows as $row) {
-            $user = new \app\models\User($row);
-            $user->update(['email' => strtolower($user->getEmail()) ]);
+            (new \yii\db\Query())->createCommand()->update(\app\models\User::TABLE, ['email' => strtolower($row['email'])], ['id' => $row['id']]);
         }
     }
 
