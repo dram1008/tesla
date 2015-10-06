@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model app\models\LoginForm */
+/* @var $model cs\base\BaseForm */
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
@@ -19,24 +19,21 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php $form = ActiveForm::begin([
             'id'                   => 'login-form',
             'enableAjaxValidation' => true,
-//        'options'              => ['class' => 'form-horizontal'],
-//        'fieldConfig'          => [
-//            'template'     => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-//            'labelOptions' => ['class' => 'col-lg-1 control-label'],
-//        ],
         ]); ?>
 
         <?= $form->field($model, 'username', ['inputOptions' => ['placeholder' => 'email']])->label('email', ['class' => 'hide']) ?>
         <?= $form->field($model, 'password', ['inputOptions' => ['placeholder' => 'Пароль']])->label('Пароль', ['class' => 'hide'])->passwordInput() ?>
-        <?= $form->field($model, 'rememberMe')->checkbox()->label('Запомнить меня') ?>
+        <?= $model->field($form, 'rememberMe')->label('Запомнить меня') ?>
 
         <div class="form-group">
             <?= Html::submitButton('Войти', [
-                'class' => 'btn btn-primary',
+                'class' => 'btn btn-primary btn-lg',
                 'name'  => 'login-button',
                 'style' => 'width:100%;',
             ]) ?>
         </div>
+        <hr>
+        <p><a style="width: 100%;" class="btn btn-default btn-xs" href="<?= \yii\helpers\Url::to(['auth/password_recover']) ?>" >Восстановить пароль</a>
 
         <?php ActiveForm::end(); ?>
     </div>

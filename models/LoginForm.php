@@ -2,13 +2,15 @@
 
 namespace app\models;
 
+use cs\base\BaseForm;
 use Yii;
 use yii\base\Model;
+use yii\helpers\ArrayHelper;
 
 /**
  * LoginForm is the model behind the login form.
  */
-class LoginForm extends Model
+class LoginForm extends BaseForm
 {
     public $username;
     public $password;
@@ -17,20 +19,33 @@ class LoginForm extends Model
     private $_user = false;
 
 
+    public function __construct($config = [])
+    {
+        self::$fields = [
+            [
+                'username', 'Логин',1,'string'
+            ],
+            [
+                'password', 'Пароль',1,'string'
+            ],
+            [
+                'rememberMe', 'Запомнить меня', 0, 'cs\Widget\CheckBox2\Validator',
+                'widget' => ['cs\Widget\CheckBox2\CheckBox', []]
+            ],
+        ];
+        parent::__construct($config);
+    }
+
     /**
      * @return array the validation rules.
      */
     public function rules()
     {
-        return [
-            // username and password are both required
-            [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
-            ['rememberMe', 'boolean'],
+        return ArrayHelper::merge([
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
             ['username', 'validateUser'],
-        ];
+        ], $this->rulesAdd());
     }
 
     /**
