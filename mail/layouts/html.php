@@ -26,9 +26,7 @@ use yii\helpers\Html;
         </tr>
         <td style="padding: 20px;">
             <p>Мир Вашему дому!</p>
-
             <?= $content ?>
-
         </td>
         <tr>
         </tr>
