@@ -116,9 +116,6 @@ class SubscribeController extends BaseController
                 'name_first'         => $name,
                 'subscribe_is_tesla' => 1,
             ];
-            foreach (Subscribe::$userFieldList as $field) {
-                $fields[ $field ] = 1;
-            }
             $user = User::insert($fields);
             $fields = RegistrationDispatcher::add($user->getId());
             \cs\Application::mail($email, 'Подтверждение почты', 'subscribe_activate', [
