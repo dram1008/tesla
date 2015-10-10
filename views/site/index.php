@@ -206,9 +206,15 @@ $this->registerJs("$('.carousel').carousel()");
                     name: $('#formSubscribeName').val()
                 },
                 success: function(ret) {
+                    var parentForm = $('#formSubscribe').parent();
                     $('#formSubscribe').remove();
+                    parentForm.append(
+                        $('<p>', {
+                            class: 'alert alert-success'
+                        }).html('Вы успешно подписались на рассылку')
+                    );
                     setCookie('subscribeIsStarted', 1);
-                    infoWindow('Вам на почту выслано подтверждение, пройдите пожалуйста на почту');
+                    showInfo('Вам на почту выслано подтверждение, пройдите пожалуйста на почту');
                 },
                 errorScript: function(ret) {
                     object = $('#formSubscribeEmail');
@@ -246,7 +252,14 @@ JS
                 </div>
             </div>
         </div>
-    <?php } ?>
+    <?php } else { ?>
+        <hr>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <p class="alert alert-success">Вы успешно подписались на рассылку</p>
+            </div>
+        </div>
+        <?php } ?>
 
 
     <hr>

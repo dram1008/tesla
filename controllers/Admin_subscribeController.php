@@ -30,20 +30,6 @@ class Admin_subscribeController extends AdminBaseController
         }
     }
 
-    public function actionEdit($id)
-    {
-        $model = \app\models\Form\SubscribeHistory::find($id);
-        if ($model->load(Yii::$app->request->post()) && $model->update2($id)) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        } else {
-            return $this->render([
-                'model' => $model,
-            ]);
-        }
-    }
-
     public function actionAdd_simple()
     {
         $model = new \app\models\Form\SubscribeHistorySimple();
@@ -65,6 +51,20 @@ class Admin_subscribeController extends AdminBaseController
         return $this->render([
             'item' => $item->getFields(),
         ]);
+    }
+
+    public function actionEdit($id)
+    {
+        $model = \app\models\Form\SubscribeHistory::find($id);
+        if ($model->load(Yii::$app->request->post()) && $model->update2($id)) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        } else {
+            return $this->render([
+                'model' => $model,
+            ]);
+        }
     }
 
     /**

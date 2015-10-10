@@ -2,7 +2,6 @@
 
 namespace app\models\Form;
 
-use app\models\NewsItem;
 use app\models\SubscribeItem;
 use app\models\User;
 use app\services\Subscribe;
@@ -26,6 +25,7 @@ class SubscribeHistorySimple extends \cs\base\BaseForm
     public $content;
     public $date_insert;
     public $subject;
+    public $is_send;
 
     function __construct($fields = [])
     {
