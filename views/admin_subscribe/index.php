@@ -81,7 +81,7 @@ JS
                             <button class="btn btn-success btn-xs buttonSend" data-id="<?= $item['id'] ?>">Разослать</button>
                         <?php } else {  ?>
                             <button class="btn btn-success btn-xs buttonSend" data-id="<?= $item['id'] ?>">Разослать</button>
-                            <span class="label label-success" data-id="<?= $item['id'] ?>"><span class="glyphicon glyphicon-ok">Разослано</span></span>
+                            <span class="label label-success" data-id="<?= $item['id'] ?>"><span class="glyphicon glyphicon-ok"></span> Разослано</span>
                         <?php } ?>
                     </div>
                 </div>
