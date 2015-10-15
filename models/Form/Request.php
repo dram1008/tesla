@@ -106,7 +106,7 @@ class Request extends BaseForm
                 'product_id' => $id,
             ]);
             // письмо клиенту
-            \cs\Application::mail($user->getEmail(), 'Вы сделали очередной заказ', 'next_request_client', [
+            $result = \cs\Application::mail($user->getEmail(), 'Вы сделали очередной заказ', 'next_request_client', [
                 'user'    => $user,
                 'request' => $request,
             ]);
@@ -141,10 +141,12 @@ class Request extends BaseForm
 
         foreach (\Yii::$app->params['requestMailList'] as $item) {
             // письмо нам
-            Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
+            $result = Application::mail($item, 'Появился заказ на TeslaGen', 'new_request', [
                 'request' => $request,
                 'user'    => $user,
             ]);
+            VarDumper::dump($result);
+
         }
 
         return $request;
