@@ -21,6 +21,7 @@ $('.buttonSend').click(function(e) {
             },
             success: function(ret) {
                 b.remove();
+                showInfo('Успешно');
             }
         });
     }
