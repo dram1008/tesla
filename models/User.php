@@ -281,12 +281,13 @@ class User extends \cs\base\DbRecord implements \yii\web\IdentityInterface
      */
     public function getAvatar($isFullPath = false)
     {
-        $avatar = $this->getField('avatar');
-        if ($avatar.'' == '') {
-            return '/images/iam.png';
-        }
-
-        return Url::to($avatar, $isFullPath);
+        return '/images/iam.png';
+//        $avatar = $this->getField('avatar');
+//        if ($avatar.'' == '') {
+//            return '/images/iam.png';
+//        }
+//
+//        return Url::to($avatar, $isFullPath);
     }
 
     /**
