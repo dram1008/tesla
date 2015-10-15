@@ -31,7 +31,7 @@ use yii\helpers\Html;
         <tr>
         </tr>
         <td style="padding: 20px;">
-            <p>С Любовью и Светом команда TeslaGen.</p>
+            <p>С Любовью и Светом корпорация TeslaGen.</p>
         </td>
         </tr>
     </table>
