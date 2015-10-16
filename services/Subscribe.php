@@ -59,7 +59,7 @@ class Subscribe
             ])
             ->column();
 
-        VarDumper::dump($emailList,3,false);
+        VarDumper::dump($emailList,3,false);exit;
 
         $rows = [];
         foreach ($emailList as $email) {
