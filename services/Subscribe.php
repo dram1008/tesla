@@ -53,6 +53,7 @@ class Subscribe
         $emailList = User::query($where)
         ->select('email')
         ->andWhere(['not', ['email' => null]])
+        ->andWhere(['not', ['email' => '']])
         ->andWhere([
             'is_active'  => 1,
 //            'is_confirm' => 1,
