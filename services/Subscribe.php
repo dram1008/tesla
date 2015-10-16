@@ -59,6 +59,8 @@ class Subscribe
             ])
             ->column();
 
+        VarDumper::dump($emailList,3,false);
+
         $rows = [];
         foreach ($emailList as $email) {
             $urlUnSubscribe = Url::to(['subscribe/unsubscribe', 'mail' => $email, 'type' => $subscribeItem->type, 'hash' => self::hashGenerate($email, $subscribeItem->type)], true);
