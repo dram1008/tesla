@@ -55,7 +55,7 @@ class Subscribe
         ->andWhere(['not', ['email' => null]])
         ->andWhere([
             'is_active'  => 1,
-            'is_confirm' => 1,
+//            'is_confirm' => 1,
         ])
         ->column();
 
