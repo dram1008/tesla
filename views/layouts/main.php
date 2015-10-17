@@ -147,7 +147,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
     <div class="container">
         <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?> &middot;
             <a href="http://www.galaxysss.ru/">Галактический Союз Сил Света</a> &middot;
-            <a href="http://www.galaxysss.ru/">Progressive Spirit</a> &middot;
+            <a href="http://www.galaxysss.ru/category/money/425">Progressive Spirit</a> &middot;
             при поддержке Архангела Метатрона и INDRA FAMILY</p>
     </div>
 </footer>
