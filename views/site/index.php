@@ -12,15 +12,14 @@ $this->registerJs("$('.carousel').carousel()");
     <div id="carousel-example-generic" class="carousel slide thumbnail" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-
-            <li data-target="#carousel-example-generic" data-slide-to="0"  class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item">
+            <div class="item active">
                 <img src="/images/controller/site/index/3.jpg" alt="...">
                 <div class="carousel-caption">
                     ...
