@@ -12,27 +12,14 @@ $this->registerJs("$('.carousel').carousel()");
     <div id="carousel-example-generic" class="carousel slide thumbnail" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+            <li data-target="#carousel-example-generic" data-slide-to="2"  class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             <li data-target="#carousel-example-generic" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="/images/controller/site/index/2.jpg" alt="...">
-                <div class="carousel-caption">
-                    ...
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/controller/site/index/1.jpg" alt="...">
-                <div class="carousel-caption">
-                    ...
-                </div>
-            </div>
             <div class="item">
                 <img src="/images/controller/site/index/3.jpg" alt="...">
                 <div class="carousel-caption">
@@ -265,7 +252,7 @@ JS
     <hr>
     <?= $this->render('../blocks/share', [
         'url'         => \yii\helpers\Url::current([], true),
-        'image'       => \yii\helpers\Url::to('/images/controller/site/index/2.jpg', true),
+        'image'       => \yii\helpers\Url::to('/images/controller/site/index/3.jpg', true),
         'title'       => 'Купить генератор Теслы',
         'description' => 'Электрогенератор вырабатывает электроэнергию, не потребляя какого-либо топлива. Время работы не ограничено. Не нужно ветра, солнца, воды и т.п.',
     ]) ?>
