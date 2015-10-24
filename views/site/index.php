@@ -84,15 +84,15 @@ $this->registerJs("$('.carousel').carousel()");
 
     <h2 class="page-header">Новости</h2>
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4" style="height: 700px;">
             <p style="font-size: 70%;color: #888;">27 сен 2015 г.</p>
-            <h3>C 5 октября ожидается повышение цен на генераторы</h3>
             <img src="/images/controller/site/index/news/news1.jpg" width="100%" class="thumbnail"/>
+            <p>C 5 октября ожидается повышение цен на генераторы</p>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" style="height: 700px;">
             <p style="font-size: 70%;color: #888;">24 окт 2015 г.</p>
-            <h3>Запущена разработка нового кожуха для генератора в виде пирамиды</h3>
             <img src="/images/controller/site/index/news/news2.jpg" width="100%" class="thumbnail"/>
+            <p>Запущена разработка нового кожуха для генератора в виде пирамиды</p>
         </div>
     </div>
 
