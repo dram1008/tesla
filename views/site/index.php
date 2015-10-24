@@ -89,6 +89,11 @@ $this->registerJs("$('.carousel').carousel()");
             <h3>C 5 октября ожидается повышение цен на генераторы</h3>
             <img src="/images/controller/site/index/news/news1.jpg" width="100%" class="thumbnail"/>
         </div>
+        <div class="col-lg-4">
+            <p style="font-size: 70%;color: #888;">24 окт 2015 г.</p>
+            <h3>Запущена разработка нового кожуха для генератора в виде пирамиды</h3>
+            <img src="/images/controller/site/index/news/news2.jpg" width="100%" class="thumbnail"/>
+        </div>
     </div>
 
     <h2 class="page-header">Цены</h2>
