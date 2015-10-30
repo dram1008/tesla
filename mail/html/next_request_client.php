@@ -4,8 +4,6 @@
 /** @var $user \app\models\User */
 
 $product = \app\models\Product::find($request->getField('product_id'));
-Yii::info(\yii\helpers\VarDumper::dumpAsString($request), 'tg\\request');
-Yii::info(\yii\helpers\VarDumper::dumpAsString($product), 'tg\\product');
 ?>
 
 
@@ -14,7 +12,7 @@ Yii::info(\yii\helpers\VarDumper::dumpAsString($product), 'tg\\product');
 <p>Цена: <?= Yii::$app->formatter->asCurrency($product->getField('price')) ?></p>
 
 
-<p></p>
+<p>&nbsp;</p>
 <p>Сообщаем вам условия сотрудничества</p>
 
 <p>Дорогие и прекрасные жители земли!</p>
