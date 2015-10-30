@@ -156,6 +156,9 @@ $this->registerJs("$('.carousel').carousel()");
             $isShowForm = true;
         }
     }
+    if (\yii\helpers\ArrayHelper::getValue(Yii::$app->params, 'isTransfere', false) == true) {
+        $isShowForm = false;
+    }
 
     if ($isShowForm) { ?>
         <hr>
