@@ -152,6 +152,10 @@ class AuthController extends BaseController
 
     public function actionPassword_recover()
     {
+        if (\yii\helpers\ArrayHelper::getValue(Yii::$app->params, 'isTransfere', false) == true) {
+            throw new Exception(Yii::$app->params['isTransfere_string']);
+        }
+
         $model = new \app\models\Form\PasswordRecover();
         $model->setScenario('insert');
 
@@ -177,6 +181,10 @@ class AuthController extends BaseController
 
     public function actionRegistration()
     {
+        if (\yii\helpers\ArrayHelper::getValue(Yii::$app->params, 'isTransfere', false) == true) {
+            throw new Exception(Yii::$app->params['isTransfere_string']);
+        }
+
         $model = new \app\models\Form\Registration();
         $model->setScenario('insert');
 

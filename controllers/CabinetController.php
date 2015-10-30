@@ -44,6 +44,10 @@ class CabinetController extends BaseController
 
     public function actionProfile()
     {
+        if (\yii\helpers\ArrayHelper::getValue(Yii::$app->params, 'isTransfere', false) == true) {
+            throw new Exception(Yii::$app->params['isTransfere_string']);
+        }
+
         $model = \app\models\Form\Profile::find(Yii::$app->user->getId());
         if ($model->load(Yii::$app->request->post()) && ($fields = $model->update())) {
             Yii::$app->user->identity->cacheClear();

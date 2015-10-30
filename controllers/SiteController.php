@@ -64,6 +64,9 @@ class SiteController extends BaseController
 
     public function actionActivate($code)
     {
+        if (\yii\helpers\ArrayHelper::getValue(Yii::$app->params, 'isTransfere', false) == true) {
+            throw new Exception(Yii::$app->params['isTransfere_string']);
+        }
         $row = \app\services\RegistrationDispatcher::query(['code' => $code])->one();
         if ($row === false) {
             throw new Exception('Нет такого кода или уже устарел');
@@ -165,6 +168,10 @@ class SiteController extends BaseController
 
     public function actionBuy($id)
     {
+        if (\yii\helpers\ArrayHelper::getValue(Yii::$app->params, 'isTransfere', false) == true) {
+            throw new Exception(Yii::$app->params['isTransfere_string']);
+        }
+
         $model = new Request();
 
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
