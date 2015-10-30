@@ -11,9 +11,10 @@ Yii::info(\yii\helpers\VarDumper::dumpAsString($product), 'tg\\product');
 
 <p>Вы сделали очередной заказ</p>
 <p>Наименование: <?= $product->getField('name') ?></p>
-<p>Цена: <?= $product->getField('price') ?></p>
+<p>Цена: <?= Yii::$app->formatter->asCurrency($product->getField('price')) ?></p>
 
 
+<p></p>
 <p>Сообщаем вам условия сотрудничества</p>
 
 <p>Дорогие и прекрасные жители земли!</p>
