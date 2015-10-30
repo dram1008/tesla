@@ -110,7 +110,7 @@ class Request extends BaseForm
                 'user'    => $user,
                 'request' => $request,
             ]);
-            Yii::info([$result], 'tg\\request');
+            Yii::info([$user->getEmail(),$result], 'tg\\request');
         } else {
             $fields = [
                 'email'              => $this->email,
