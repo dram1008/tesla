@@ -31,7 +31,10 @@ use yii\helpers\Html;
         <tr>
         </tr>
         <td style="padding: 20px;">
-            <p>С Любовью и Светом корпорация TeslaGen.</p>
+            <p>С Любовью и Светом</p>
+            <p>Единый Божественный Мировой Союз</p>
+            <p>TeslaGen – GovindaPower (TecлаГен – Энергия Господа)</p>
+            <p><a href="http://teslagen.org/">http://teslagen.org/</a></p>
         </td>
         </tr>
     </table>

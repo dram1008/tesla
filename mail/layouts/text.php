@@ -9,4 +9,7 @@ use yii\helpers\Html;
 
 <?= $content ?>
 
-С Любовью и Светом корпорация TeslaGen.
+С Любовью и Светом
+Единый Божественный Мировой Союз
+TeslaGen – GovindaPower (TecлаГен – Энергия Господа)
+http://teslagen.org/

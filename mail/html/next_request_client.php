@@ -30,72 +30,52 @@ $product = \app\models\Product::find($request->getField('product_id'));
 
 <p>5.&nbsp;Получить дальнейшие инструкции по его получению</p>
 
-<p>Проект Tesla Gen является началом установления Корпорации Счастья на Земле.</p>
+<p>Единый Божественный Мировой Союз «TeslaGen» является началом установления Золотого Века и Эпохи Водолея на Земле.</p>
 
-<p>Мы строим корпорацию счастья куда входит:</p>
+<p>Мы строим этот союз куда входит:</p>
 
 <ol>
-    <li>
-        <p>Галактический Союз Сил Света <a href="http://www.galaxysss.ru/mission">http://www.galaxysss.ru/mission</a></p>
-    </li>
-    <li>
-        <p>Progressive Spirit Business Club Vasudev Bagavan <a href="http://www.galaxysss.ru/category/money/425">http://www.galaxysss.ru/category/money/425</a></p>
-    </li>
-    <li>
-        <p>Город Солнца</p>
-    </li>
-    <li>
-        <p>CAPITALOV Национальное Агенство Капиталов <a href="http://www.galaxysss.ru/category/money/430">http://www.galaxysss.ru/category/money/430</a></p>
-    </li>
-    <li>
-        <p>СутРа Project <a href="http://www.galaxysss.ru/category/music/407">http://www.galaxysss.ru/category/music/407</a></p>
-    </li>
-    <li>
-        <p>Школа Богов</p>
-    </li>
-    <li>
-        <p>Университет Фрактального Бизнеса УФБ</p>
-    </li>
-    <li>
-        <p>Аттракцион Счастья</p>
-    </li>
-    <li>
-        <p>TeslaGen<a href="http://tesla.galaxysss.ru/"> http://tesla.galaxysss.ru/</a></p>
-    </li>
-    <li>
-        <p>Телеканал Игры Богов</p>
-    </li>
-    <li>
-        <p>Progressive Spirit Vision</p>
-    </li>
-    <li>
-        <p>Авиалинии БогДан &ndash; новая технология перелетов в пространстве при помощи &laquo;крыльев ангела&raquo;.</p>
-    </li>
-    <li>
-        <p>Progresive Spirit Radio One</p>
-    </li>
-    <li>
-        <p>Прощающая система<a href="http://www.galaxysss.ru/forgive"> http://www.galaxysss.ru/forgive</a></p>
-    </li>
-    <li>
-        <p>Кришна Прасад &ndash; еда по принципу уважения ко всем формам жизни.</p>
-    </li>
-    <li>
-        <p>Кристалл Телепатии &ndash; новое средство общения, работающее везде и всегда устраняющее ограничение в нахождении участников разговора.</p>
-    </li>
-    <li>
-        <p>Галактическое Агентство Переходов &ndash; агентство, предоставляющее услуги сопровождения души в мир иной, консалтинговые услуги по действиям в промежуточном состоянии между уходом и приходом на Земле, и здоровые роды на Земли по законам космоса.</p>
-    </li>
-    <li>
-        <p>LINEAROSSA Интерьерные решения и товары для жизни по сакральной геометрии.</p>
-    </li>
-    <li>
-        <p>Институт Гармоничного Развития Человека</p>
-    </li>
-    <li>
-        <p>Фонд ПОРА ЖИТЬ&nbsp;по защите: Учителей, Родителей, Стариков, Женщин, Детей, Коров, Животных.</p>
-    </li>
+    <li>Галактический  Союз Сил Света&nbsp;<a href="http://www.galaxysss.ru/mission">http://www.galaxysss.ru/mission</a></li>
+    <li>Город солнца, центром которого станет Резиденция Галактического Союза Сил Света&nbsp;<a href="http://www.galaxysss.ru/residence">http://www.galaxysss.ru/residence</a></li>
+    <li>Progressive Spirit Business Club Vasudev Bagavan&nbsp;<a href="http://www.galaxysss.ru/category/money/425">http://www.galaxysss.ru/category/money/425</a></li>
+    <li>CAPITALOV Национальное Агенство Капиталов&nbsp;<a href="http://www.capitalov.com/">http://www.capitalov.com/</a>  </li>
+    <li>СутРа Project&nbsp;<a href="http://www.galaxysss.ru/category/music/407">http://www.galaxysss.ru/category/music/407</a></li>
+    <li>Школа Богов</li>
+    <li>Университет Фрактального Бизнеса</li>
+    <li>Аттракцион Счастья</li>
+    <li>Институт Многомерной Медицины <a href="http://www.galaxysss.ru/category/medical/344">http://www.galaxysss.ru/category/medical/344</a>   </li>
+    <li>Телеканал Игры Богов, Progressive  Spirit Vision</li>
+    <li>Авиалинии БогДан – новая технология перелетов в  пространстве при помощи «крыльев ангела» <a href="http://www.galaxysss.ru/category/house/433">http://www.galaxysss.ru/category/house/433</a></li>
+    <li>Progresive Spirit Radio One</li>
+    <li>Прощающая система<a href="http://www.galaxysss.ru/forgive">&nbsp;http://www.galaxysss.ru/forgive</a></li>
+    <li>Кришна Прасад – еда по принципу уважения ко всем  формам жизни.</li>
+    <li>Кристалл Телепатии – новое средство общения,  работающее везде и всегда устраняющее ограничение в нахождении участников  разговора.</li>
+    <li>Агентство сохранения Рода – агентство, предоставляющее  услуги сопровождения души в мир иной, консалтинговые услуги по действиям в  промежуточном состоянии между уходом и приходом на Земле, и здоровые роды на  Земли по законам космоса.</li>
+    <li>LINEAROSSA Интерьерные решения и товары для жизни по  сакральной геометрии.</li>
+    <li>Институт Гармоничного Развития Человека</li>
+    <li>Фонд ПОРА ЖИТЬ&nbsp;по защите: Учителей, Родителей,  Стариков, Женщин, Детей, Коров, Животных.</li>
 </ol>
+
+<p>Миссия  Единого Божественного Мирового Союза «TeslaGen - GovindaPower»<br />
+    1. Способствовать процветанию России, Мира и Вселенной<br />
+    2. Установить на планете Земля «Стандарт Золотого Века»<br />
+    3. Построить <a href="http://www.galaxysss.ru/newEarth/kon">Новую Землю</a> взаимодействующую по <a href="http://www.galaxysss.ru/newEarth/kon">Божественным  канонам Творца</a>.</p>
+<p>«TeslaGen  – GovindaPower» переводится как «TecлаГен – Энергия Господа»</p>
+<p>Принцип  построения союза подобен строению «<a href="http://www.galaxysss.ru/logo">Цветка Жизни</a>»  и выражается как «Один за всех и Все за одного».</p>
+<p>Наш  девиз: «Мы дарим Свет!»</p>
+
+<p><img src="http://tesla.galaxysss.ru/images/mail/new_request_client/11951990_10153614106752888_8936861898552140126_n.jpg" /></p>
+
+<p>Мы заключаем договора с глазу на глаз и на честном слове, соблюдая  чистоту Рода.</p>
+<p> В сотворении Единого Божественного Мирового  Союза заложены <em>Квантовая  Голограмма</em>, эфирные технологии выработки бесконечного электричества и  каноны Вселенной Творца.</p>
+
+<p align="center"><strong>Квантовая  Голограмма</strong></p>
+<p align="center"><img src="http://tesla.galaxysss.ru/images/mail/new_request_client/400.png"  width="400" height="400"/></p>
+
+<p><em>«Наблюдая  эту мандалу вы получаете многомерное знание альтернативного развития и эволюции  человечества направленное на Центральное Солнце Вселенной, которое говорит об  объединении, синтезе, балансе мужских и женских энергий Вселенной и  расположение их в соответствии с Божественным Замыслом Золотого Века Творца,  где каждый атом вибрирует РАдостью и скрепляется Любовью, в самом центре России  установлен символ изобилия – бесконечный Источник Энергии (ТеслаГен) полностью  замещающий и нейтрализирующий все негативные действия и последствия действий  Зикурата и создании на планете Земля мира Богов СоТворцов Эры Водолея.</em></p>
+<p><em>Обладая  свободой воли вы имеете право на свободу выбора своего развития и принимаете  решение на основе своей осознанности и неприкосновенности воли как «Я Есть  Творец и желаю всем Счастья».</em></p>
+
+
 
 <p>В нашем арсенале союзников уже насчитывается 156 объединений. Они представлены здесь:&nbsp;<a href="http://www.galaxysss.ru/direction">http://www.galaxysss.ru/direction</a>. И это только начало нашего торжества&nbsp;Золотого Века и Рая на планете Земля.</p>
 
@@ -129,7 +109,7 @@ $product = \app\models\Product::find($request->getField('product_id'));
 
 <p>Мы несем &laquo;Свет&raquo;.</p>
 
-<p><img alt="" src="http://tesla.galaxysss.ru/upload/HtmlContent/tg_subscribe_history/content/00000006/1444947419_jz94XKBefH.jpg" style="width: 100%;" /></p>
+<p><img alt="" src="http://tesla.galaxysss.ru/images/mail/new_request_client/1444947419_jz94XKBefH.jpg" style="width: 100%;" /></p>
 
 <p>Кто не верит до свидания, живите дальше в своем мире и мы желаем вам Счастья.</p>
 
