@@ -10,8 +10,6 @@ use app\services\GsssHtml;
 $content = $item->getField('content', '');
 ?>
 
-<p>На инструмент Вознесения была добавлена следующая новость:</p>
-
 <h3 style="font-weight: normal;"><?= $item->getName() ?></h3>
 
 <p><a href="<?= $item->getLink(true) ?>"><img src="<?= $item->getImage(true) ?>" style="display: block;

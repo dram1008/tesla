@@ -10,7 +10,6 @@ use app\services\GsssHtml;
 $content = $item->getField('content', '');
 ?>
 
-На инструмент Вознесения была добавлена следующая новость:
 <?= $item->getName() ?>
 
 Краткое содержание:
