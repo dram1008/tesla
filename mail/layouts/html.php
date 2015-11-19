@@ -34,7 +34,7 @@ use yii\helpers\Html;
             <p>С Любовью и Светом</p>
             <p>Единый Божественный Мировой Союз</p>
             <p>TeslaGen – GovindaPower (TecлаГен – Энергия Господа)</p>
-            <p><a href="http://teslagen.org/">http://teslagen.org/</a></p>
+            <p><a href="http://www.teslagen.org/">http://www.teslagen.org/</a></p>
         </td>
         </tr>
     </table>

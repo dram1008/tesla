@@ -16,6 +16,7 @@ class Subscribe
     const TYPE_NEWS        = 1;
     const TYPE_SITE_UPDATE = 2;
     const TYPE_MANUAL      = 3;
+    const TYPE_TESLA       = 4;
 
     /** @var array Список полей для хранения информации о типах подписки */
     public static $userFieldList = [

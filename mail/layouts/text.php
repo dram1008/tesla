@@ -12,4 +12,4 @@ use yii\helpers\Html;
 С Любовью и Светом
 Единый Божественный Мировой Союз
 TeslaGen – GovindaPower (TecлаГен – Энергия Господа)
-http://teslagen.org/
+http://www.teslagen.org/

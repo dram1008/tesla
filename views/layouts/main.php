@@ -60,6 +60,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 //                        ['label' => 'Промышленное использование', 'url' => ['site/prom']],
                         ['label' => 'Тест драйв', 'url' => ['site/rent']],
                         ['label' => 'Сервис', 'url' => ['site/service']],
+                        ['label' => 'Новости', 'url' => ['site/news']],
                         ['label' => 'Доставка', 'url' => ['site/dostavka']],
                         ['label' => 'Диллерская программа', 'url' => ['site/diller']],
                         ['label' => 'Контакты', 'url' => ['site/contact']],
@@ -101,6 +102,7 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
                                 <?php if (Yii::$app->user->identity->isAdmin()) { ?>
                                     <li class="divider"></li>
                                     <li><a href="<?= \yii\helpers\Url::to(['admin_subscribe/index']) ?>">Рассылки</a></li>
+                                    <li><a href="<?= \yii\helpers\Url::to(['admin_news/index']) ?>">Новости</a></li>
                                 <?php } ?>
 
                                 <li class="divider"></li>

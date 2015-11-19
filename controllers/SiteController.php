@@ -245,6 +245,11 @@ class SiteController extends BaseController
         return $this->render([]);
     }
 
+    public function actionNews()
+    {
+        return $this->render([]);
+    }
+
     public function actionDostavka()
     {
         return $this->render([]);
