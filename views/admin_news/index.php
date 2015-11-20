@@ -65,7 +65,7 @@ JS
                     </div>
 
                     <div class="col-lg-9">
-                        <?= Html::tag('span', GsssHtml::dateString($item['date_insert']), ['style' => 'font-size: 80%; margin-bottom:10px; color: #c0c0c0;'])   ?>
+                        <?= Html::tag('span', GsssHtml::dateString($item['date']), ['style' => 'font-size: 80%; margin-bottom:10px; color: #c0c0c0;'])   ?>
                         <br>
                         <?= GsssHtml::getMiniText($item['content']) ?>
                         <br>
