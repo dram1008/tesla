@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Form\NewPassword;
 use app\models\Form\Request;
 use app\models\Log;
+use app\models\NewsItem;
 use app\models\Product;
 use app\models\User;
 use cs\base\BaseController;
@@ -243,6 +244,23 @@ class SiteController extends BaseController
     public function actionRent()
     {
         return $this->render([]);
+    }
+
+    public function actionNews_item($year, $month, $day, $id)
+    {
+        $date = $year . $month . $day;
+        $newsItem = NewsItem::find([
+            'date'      => $date,
+            'id_string' => $id
+        ]);
+        if (is_null($newsItem)) {
+            throw new Exception('Нет такой новости');
+        }
+        $newsItem->incViewCounter();
+
+        return $this->render([
+            'item' => $newsItem,
+        ]);
     }
 
     public function actionNews()

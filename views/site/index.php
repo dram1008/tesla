@@ -22,24 +22,12 @@ $this->title = 'Тесла Ген';
     <div class="carousel-inner" role="listbox">
         <div class="item active">
             <img src="/images/controller/site/index/3.jpg" alt="...">
-
-            <div class="carousel-caption">
-                ...
-            </div>
         </div>
         <div class="item">
             <img src="/images/controller/site/index/4.jpg" alt="...">
-
-            <div class="carousel-caption">
-                ...
-            </div>
         </div>
         <div class="item">
             <img src="/images/controller/site/index/5.jpg" alt="...">
-
-            <div class="carousel-caption">
-                ...
-            </div>
         </div>
     </div>
 
