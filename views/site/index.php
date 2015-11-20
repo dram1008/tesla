@@ -99,7 +99,7 @@ $this->title = 'Тесла Ген';
 <h2 class="page-header">Новости</h2>
 
 <div class="row">
-    <?php foreach (\app\models\NewsItem::query()->orderBy(['date_insert' => SORT_DESC])->limit(3)->all() as $item) { ?>
+    <?php foreach (\app\models\NewsItem::query()->orderBy(['date' => SORT_DESC])->limit(3)->all() as $item) { ?>
         <?php $i = new \app\models\NewsItem($item); ?>
         <div class="col-lg-4" style="height: 500px;">
             <p style="font-size: 70%;color: #888;"><?= \app\services\GsssHtml::dateString($i->getField('date')) ?></p>

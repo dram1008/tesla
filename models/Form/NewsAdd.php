@@ -41,6 +41,16 @@ class NewsAdd extends \cs\base\BaseForm
     {
         static::$fields = [
             ['header', 'Название', 1, 'string'],
+            [
+                'date',
+                'Дата',
+                1,
+                'widget' => [
+                    'cs\Widget\DatePicker\DatePicker', [
+                        'dateFormat' => 'php:d.m.Y',
+                    ]
+                ],
+            ],
             ['description', 'Описание краткое', 0, 'string', [], 'Без HTML'],
             ['source', 'Ссылка', 0, 'url'],
             ['content', 'Описание', 0, 'string', 'widget' => ['cs\Widget\HtmlContent\HtmlContent']],

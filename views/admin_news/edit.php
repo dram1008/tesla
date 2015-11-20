@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'options' => ['enctype' => 'multipart/form-data']
                 ]); ?>
                 <?= $model->field($form, 'header') ?>
+                <?= $model->field($form, 'date') ?>
                 <?= $model->field($form, 'source') ?>
                 <?= $model->field($form, 'description')->textarea(['rows' => 10]) ?>
                 <?= $model->field($form, 'content') ?>
