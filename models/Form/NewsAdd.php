@@ -68,7 +68,6 @@ class NewsAdd extends \cs\base\BaseForm
                 $fields['date_insert'] = gmdate('YmdHis');
                 $fields['id_string'] =  Str::rus2translit($fields['header']);
                 $fields['is_show'] = 1;
-                $fields['date'] = gmdate('Y-m-d');
 
                 return $fields;
             },
