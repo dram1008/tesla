@@ -32,6 +32,9 @@ $this->title = 'Редактирование профиля';
             ]); ?>
             <?= $form->field($model, 'name_first')->label('Имя') ?>
             <?= $form->field($model, 'name_last')->label('Фамилия') ?>
+            <?= $model->field($form, 'avatar') ?>
+
+
             <div class="form-group">
                 <label class="control-label col-sm-3" for="profile-phone">Реферальная ссылка</label>
 
