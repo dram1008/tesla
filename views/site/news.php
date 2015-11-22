@@ -8,7 +8,7 @@ $this->title = 'Новости';
     <h1 class="page-header"><?= \yii\bootstrap\Html::encode($this->title) ?></h1>
 
     <div class="row">
-        <?php foreach(\app\models\NewsItem::query()->orderBy(['date_insert' => SORT_DESC])->all() as $item) { ?>
+        <?php foreach(\app\models\NewsItem::query()->orderBy(['date' => SORT_DESC])->all() as $item) { ?>
             <?php $i = new \app\models\NewsItem($item); ?>
             <div class="col-lg-4">
                 <div style="height: 70px;">
