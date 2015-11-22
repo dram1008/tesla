@@ -65,4 +65,11 @@ class Profile extends BaseForm
         ];
         parent::__construct($fields);
     }
+
+    public function update($fields = null)
+    {
+        $ret =  parent::update($fields);
+
+        return $ret;
+    }
 }
