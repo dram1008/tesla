@@ -48,7 +48,7 @@ $this->registerJs("$('.btn-order').tooltip({title:'Заказать'})");
 
                 <p><span style="font-size: 400%;"><?= $item['kvt'] ?></span> кВт, <span class="label label-default">380 В</span>
                 </p>
-                <a href="javascript:void(0);" class="btn btn-success"
+                <a href="<?= \yii\helpers\Url::to(['site/buy', 'id' => $item['id']]); ?>" class="btn btn-success btn-order"
                    style="width: 100%"><?= \Yii::$app->formatter->asCurrency((int)$item['price']) ?></a>
             </div>
         <?php } ?>
