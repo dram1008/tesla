@@ -43,6 +43,7 @@ return [
     'service'                                                  => 'site/service',
     'rent'                                                     => 'site/rent',
     'news'                                                     => 'site/news',
+    'test'                                                     => 'site/test',
     'buy/<id:\\d+>'                                            => 'site/buy',
 
     'admin/products'                                           => 'admin_products/index',

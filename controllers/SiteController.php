@@ -8,7 +8,9 @@ use app\models\Log;
 use app\models\NewsItem;
 use app\models\Product;
 use app\models\User;
+use cs\Application;
 use cs\base\BaseController;
+use cs\services\VarDumper;
 use cs\web\Exception;
 use Yii;
 use yii\bootstrap\ActiveForm;
@@ -244,6 +246,11 @@ class SiteController extends BaseController
     public function actionRent()
     {
         return $this->render([]);
+    }
+
+    public function actionTest()
+    {
+        VarDumper::dump(Application::mail('dram1008@yandex.ru', 'test','1'));
     }
 
     public function actionNews_item($year, $month, $day, $id)
