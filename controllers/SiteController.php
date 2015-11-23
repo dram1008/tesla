@@ -250,7 +250,7 @@ class SiteController extends BaseController
 
     public function actionTest()
     {
-        VarDumper::dump(Application::mail('dram1008@yandex.ru', 'test','1'));
+        VarDumper::dump(mail('dram1008@yandex.ru', 'test', 'test' ));
     }
 
     public function actionNews_item($year, $month, $day, $id)
