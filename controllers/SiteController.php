@@ -248,6 +248,21 @@ class SiteController extends BaseController
         return $this->render([]);
     }
 
+    public function actionConditions()
+    {
+        return $this->render([]);
+    }
+
+    public function actionFormula_enter()
+    {
+        return $this->render([]);
+    }
+
+    public function actionArchangel_metatron()
+    {
+        return $this->render([]);
+    }
+
     public function actionTest()
     {
         VarDumper::dump(Application::mail('dram1008@yandex.ru', '1','1'));

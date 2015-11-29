@@ -152,7 +152,14 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
         <p class="pull-left">&copy; Тесла Ген <?= date('Y') ?> &middot;
             <a href="http://www.galaxysss.ru/">Галактический Союз Сил Света</a> &middot;
             <a href="http://www.galaxysss.ru/category/money/425">Progressive Spirit</a> &middot;
-            при поддержке Архангела Метатрона и INDRA FAMILY</p>
+            при поддержке <a href="/archangelMetatron">Архангела Метатрона</a> и INDRA FAMILY</p>
+
+        <p class="pull-right">
+            <?php $this->registerJs("$('#footerConditions').tooltip()") ?>
+            <a href="/conditions"
+               id="footerConditions"
+               title="Соглашение о наблюдении Единого Божественного Мирового Союза «ТеслаГен – Энергия Бога» и формирование мыслей о нем">Соглашение о наблюдении</a>
+        </p>
     </div>
 </footer>
 
