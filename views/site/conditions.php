@@ -72,11 +72,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 сам и породил по принципу Зеркала: «Кто ко Мне с чем придет, тот этого и получит».
             </p>
 
+
+
             <p>
                 Я сотрудничаю с другими только по принципу братства «Один за всех и все за одного», принимающие <a
                     href="/formulaEnter"> формулу
                     Вхождения во Вселенную Света</a>.
             </p>
+
+            <center>
+                <p><img src="/images/controller/site/conditions/earth.jpg" width="100%"
+                        class="thumbnail"></p>
+            </center>
         </div>
     </div>
 
