@@ -146,6 +146,55 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
     </div>
 </div>
 
+<?php
+$isShowForm = true;
+if (Yii::$app->requestedRoute == 'site/conditions') {
+    $isShowForm = false;
+} else {
+    if (Yii::$app->user->isGuest) {
+        if (isset(Yii::$app->request->cookies['isFirstVisit'])) {
+            $isShowForm = false;
+        }
+    } else {
+        $isShowForm = false;
+    }
+}
+?>
+<?php if ($isShowForm) { ?>
+    <!-- Modal -->
+    <div class="modal fade" id="modalConditions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Условия просмотра сайта</h4>
+                </div>
+                <div class="modal-body">
+                    Для того чтобы просматривать сайт вам необходимо принять условия соглашения <a href="/conditions">http://www.teslagen.org/conditions</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success buttonSuccess">Принять</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    $this->registerJs(<<<JS
+        function setCookie (name, value, expires, path, domain, secure) {
+            document.cookie = name + "=" + escape(value) +
+            ((expires) ? "; expires=" + expires : "") +
+            ((path) ? "; path=" + path : "") +
+            ((domain) ? "; domain=" + domain : "") +
+            ((secure) ? "; secure" : "");
+        }
+        $('#modalConditions').modal('show');
+        $('#modalConditions .buttonSuccess').click(function() {
+            setCookie('isFirstVisit', 1);
+            $('#modalConditions').modal('hide');
+        });
+JS
+);
+    ?>
+<?php } ?>
 
 <footer class="footer">
     <div class="container">
