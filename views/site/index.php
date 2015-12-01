@@ -13,7 +13,7 @@ $this->title = 'Тесла Ген';
 <div id="carousel-example-generic" class="carousel slide thumbnail" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item">
+        <div class="item active">
             <img src="/images/controller/site/index/3.jpg" alt="...">
         </div>
         <div class="item">
@@ -22,7 +22,7 @@ $this->title = 'Тесла Ген';
         <div class="item">
             <img src="/images/controller/site/index/5.jpg" alt="...">
         </div>
-        <div class="item active">
+        <div class="item">
             <img src="/images/controller/site/index/1.jpg" alt="...">
         </div>
     </div>
