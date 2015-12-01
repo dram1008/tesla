@@ -147,18 +147,19 @@ $this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
 </div>
 
 <?php
-$isShowForm = true;
-if (Yii::$app->requestedRoute == 'site/conditions') {
-    $isShowForm = false;
-} else {
-    if (Yii::$app->user->isGuest) {
-        if (isset(Yii::$app->request->cookies['isFirstVisit'])) {
-            $isShowForm = false;
-        }
-    } else {
-        $isShowForm = false;
-    }
-}
+$isShowForm = false;
+//$isShowForm = true;
+//if (Yii::$app->requestedRoute == 'site/conditions') {
+//    $isShowForm = false;
+//} else {
+//    if (Yii::$app->user->isGuest) {
+//        if (isset(Yii::$app->request->cookies['isFirstVisit'])) {
+//            $isShowForm = false;
+//        }
+//    } else {
+//        $isShowForm = false;
+//    }
+//}
 ?>
 <?php if ($isShowForm) { ?>
     <!-- Modal -->
