@@ -43,6 +43,7 @@ return [
     'service'                                                  => 'site/service',
     'rent'                                                     => 'site/rent',
     'news'                                                     => 'site/news',
+    'thank'                                                    => 'site/thank',
     'conditions'                                               => 'site/conditions',
     'archangelMetatron'                                        => 'site/archangel_metatron',
     'formulaEnter'                                             => 'site/formula_enter',
