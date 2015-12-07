@@ -66,15 +66,21 @@ class SubscribeHistory extends \cs\base\BaseForm
         // получаю content
         {
             $content = $class->getField('content');
-            require_once(Yii::getAlias('@csRoot/services/simplehtmldom_1_5/simple_html_dom.php'));
-            $content = str_get_html($content);
-            foreach ($content->find('img') as $element) {
-                $src = $element->attr['src'];
-                if (StringHelper::startsWith($src, 'http') == false) {
-                    $element->attr['src'] = Url::to($src, true);
-                }
+            // выбираю все изображения из контента
+            $start = 0;
+            $ret = [];
+            do {
+                $pos = Str::pos('src="/upload/HtmlContent/', $content, $start);
+                if ($pos === false) break;
+                $end = Str::pos('"', $content, $pos+5);
+                $src = Str::sub($content,$pos+5, $end-$pos-5);
+                $ret[] = $src;
+                $start = $end;
+            } while (true);
+
+            foreach ($ret as $src) {
+                $content = Str::replace('src="'.$src.'"', 'src="'.Url::to($src, true).'"', $content);
             }
-            $content = $content->root->outertext();
             $class->setContent($content);
         }
 
@@ -89,15 +95,21 @@ class SubscribeHistory extends \cs\base\BaseForm
         // получаю content
         {
             $content = $class->getField('content');
-            require_once(Yii::getAlias('@csRoot/services/simplehtmldom_1_5/simple_html_dom.php'));
-            $content = str_get_html($content);
-            foreach ($content->find('img') as $element) {
-                $src = $element->attr['src'];
-                if (StringHelper::startsWith($src, 'http') == false) {
-                    $element->attr['src'] = Url::to($src, true);
-                }
+            // выбираю все изображения из контента
+            $start = 0;
+            $ret = [];
+            do {
+                $pos = Str::pos('src="/upload/HtmlContent/', $content, $start);
+                if ($pos === false) break;
+                $end = Str::pos('"', $content, $pos+5);
+                $src = Str::sub($content,$pos+5, $end-$pos-5);
+                $ret[] = $src;
+                $start = $end;
+            } while (true);
+
+            foreach ($ret as $src) {
+                $content = Str::replace('src="'.$src.'"', 'src="'.Url::to($src, true).'"', $content);
             }
-            $content = $content->root->outertext();
             $class->setContent($content);
         }
 
