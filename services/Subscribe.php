@@ -46,8 +46,8 @@ class Subscribe
                 $where = ['subscribe_is_site_update' => 1];
                 break;
             case self::TYPE_TESLA:
-                $where = ['subscribe_is_tesla' => 1];
-//                $where = ['subscribe_is_test' => 1];
+//                $where = ['subscribe_is_tesla' => 1];
+                $where = ['subscribe_is_test' => 1];
                 break;
         }
 
