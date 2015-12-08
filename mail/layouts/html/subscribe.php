@@ -49,7 +49,7 @@ use yii\helpers\Html;
 ">
         <tr>
             <td>
-                <img src="<?= \yii\helpers\Url::to('/images/page/mission/ab.jpg', true) ?>" width="600">
+                <img src="<?= \yii\helpers\Url::to('/images/mail/header.jpg', true) ?>" width="600">
             </td>
         <tr>
         </tr>
