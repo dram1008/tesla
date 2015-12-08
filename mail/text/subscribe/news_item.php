@@ -6,6 +6,7 @@
 
 use yii\helpers\Html;
 use app\services\GsssHtml;
+use cs\services\Str;
 
 $content = $item->getField('content', '');
 // выбираю все изображения из контента
