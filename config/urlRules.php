@@ -47,6 +47,7 @@ return [
     'conditions'                                               => 'site/conditions',
     'archangelMetatron'                                        => 'site/archangel_metatron',
     'formulaEnter'                                             => 'site/formula_enter',
+    'video'                                                    => 'site/video',
     'test'                                                     => 'site/test',
     'buy/<id:\\d+>'                                            => 'site/buy',
 

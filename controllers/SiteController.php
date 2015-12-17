@@ -258,6 +258,11 @@ class SiteController extends BaseController
         return $this->render([]);
     }
 
+    public function actionVideo()
+    {
+        return $this->render([]);
+    }
+
     public function actionArchangel_metatron()
     {
         return $this->render([]);
