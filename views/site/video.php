@@ -8,15 +8,18 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Проект Новая Земля';
+$this->title = 'Проект «Новая Земля»';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
+            <h1 class="page-header text-center"><small>Проект</small><br>«Новая Земля»</h1>
 
             <?php if (isset(Yii::$app->request->cookies['isGodsStart'])) { ?>
                 <iframe style="margin-top: 50px;" width="100%" class="thumbnail" height="315" src="https://www.youtube.com/embed/PNvcyTCC6Qs" frameborder="0" allowfullscreen></iframe>
+            <?php } else { ?>
+                <p><img src="/images/controller/site/video/header.png" width="100%" class="thumbnail"></p>
             <?php } ?>
 
 
@@ -123,8 +126,8 @@ JS
     <hr>
     <?= $this->render('../blocks/share', [
         'url'         => \yii\helpers\Url::current([], true),
-        'image'       => \yii\helpers\Url::to('/images/controller/site/conditions/holo.png', true),
-        'title'       => $this->title,
+        'image'       => \yii\helpers\Url::to('/images/controller/site/video/share.png', true),
+        'title'       => 'Проект Новая Земля. Смотреть Всем!',
         'description' => 'Любое живое существо наблюдающее Единый Божественный Мировой Союз находящееся в этой
                 Вселенной прошлого настоящего и будущего, формирующее мысли о нем или так или иначе связанные с ним
                 автоматически в одностороннем порядке принимает условия нижеследующего соглашения.',
