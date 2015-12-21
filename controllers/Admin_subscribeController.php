@@ -84,7 +84,7 @@ class Admin_subscribeController extends AdminBaseController
         }
         $subscribeItem = new SubscribeItem();
         $subscribeItem->subject = $subscribe->getField('subject');
-        $subscribeItem->type = Subscribe::TYPE_MANUAL;
+        $subscribeItem->type = Subscribe::TYPE_TESLA;
 
         /** @var \yii\swiftmailer\Mailer $mailer */
         $mailer = Yii::$app->mailer;
