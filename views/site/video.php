@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-8 col-lg-offset-2">
 
             <?php if (isset(Yii::$app->request->cookies['isGodsStart'])) { ?>
-                <iframe style="margin-top: 50px;" width="100%" class="thumbnail" height="315" src="https://www.youtube.com/embed/y7LWDpGOnkc" frameborder="0" allowfullscreen></iframe>
+                <iframe style="margin-top: 50px;" width="100%" class="thumbnail" height="315" src="https://www.youtube.com/embed/PNvcyTCC6Qs" frameborder="0" allowfullscreen></iframe>
             <?php } ?>
 
 
